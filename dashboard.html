@@ -10,22 +10,21 @@
   </head>
   <body>
     <header class="page-header"><h1>Job Search Journal</h1></header>
-    <div class="container" id="searchBox">
-    <input type="text" id="searchTerm" placeholder="Search for Jobs on Dice and Github Jobs?"><input type="text" id="searchLocation" placeholder="City, State, Zip">
+    <form class="container" id="searchForm">
+    <input type="text" id="searchTerm" placeholder="Search for Jobs on Dice" name ="search"><input type="text" id="searchLocation" placeholder="City" name="location">
     <button type="submit" id="searchButton">SEARCH</button>
-    </div>
+    </form>
     <div class="container centered">
         <div class="row">
             <div class="col-xs-6" id='calendar'>
-               <img src="calendar.jpg" alt="calendar-placeholder">
+               
             </div>
             <div class="col-xs-6" id='to-do-list'>
-               <img src="todo.jpg" alt="to-do-list">
+               
             </div>
         </div>
     </div>
-
-    <div id="results"></div>
+    <div id="results" class="col-xs-12"> </div>
     <button type="button" id="logOut" class="centered">Close Journal</button>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>

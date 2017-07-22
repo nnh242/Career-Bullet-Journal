@@ -76,3 +76,9 @@ header {
   width: 30%;
 }
 
+#results {
+  border: 1px solid #897C80;
+  border-radius: 12px;
+  margin: 0 auto;
+  padding: 10px;
+}
