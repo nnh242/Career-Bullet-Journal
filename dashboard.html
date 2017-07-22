@@ -7,27 +7,44 @@
        <title>Job Search Journal - Dashboard</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.css">
+    <link href='scheduler.min.css' rel='stylesheet' />
   </head>
   <body>
     <header class="page-header"><h1>Job Search Journal</h1></header>
+    <section name="jobSearch">
     <form class="container" id="searchForm">
     <input type="text" id="searchTerm" placeholder="Search for Jobs on Dice" name ="search"><input type="text" id="searchLocation" placeholder="City" name="location">
     <button type="submit" id="searchButton">SEARCH</button>
     </form>
-    <div class="container centered">
-        <div class="row">
-            <div class="col-xs-6" id='calendar'>
-               
-            </div>
-            <div class="col-xs-6" id='to-do-list'>
-               
-            </div>
-        </div>
-    </div>
     <div id="results" class="col-xs-12"> </div>
+    </section>
+     <section name="toDoList">
+     <h3>To - Do List </h3>
+      <form id="toDo">
+        <input type="text" name="entry" id="entry" placeholder="Add a task">
+        <button type="submit" id="addTask">Add</button>
+      </form>
+      <ul class="list">
+        <li>
+          <span class="task">Prepare for interview</span><button class="check">check</button><button class="delete">delete</button>
+        </li>
+      </ul>
+    </section>    
+     <section name="calendar">
+      <div id="calendar"></div>
+    </section>
+    <footer>
     <button type="button" id="logOut" class="centered">Close Journal</button>
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    </footer>
+   <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="dashboard.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
+  <script src='scheduler.min.js'></script>
+  <script src="dashboard.js"></script>
   </body>
 </html>

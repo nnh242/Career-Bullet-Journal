@@ -48,11 +48,10 @@ header {
   padding: 10px 20px;
 }
 
-.submit, #logOut {
+.submit {
   padding: 10px 20px;
   width: 100%;
   font-size: 1.5em;
-  font-family: Raleway;
   font-weight: 200;
   display: block;
   color: white;
@@ -64,21 +63,38 @@ header {
   border-radius: 6px;
   cursor: pointer;
 }
+
+#logOut, #addTask, .check, .delete {
+  margin: auto;
+  margin-top: 3em;
+  background: none;
+  border: 0px;
+  color: #897C80;
+  font-size: 15px;
+  cursor: pointer;
+}
+.item_checked {
+  text-decoration: line-through;
+}
+.list {
+  list-style: none;
+}
+
 .container {
   width :100%;
 }
-
+.result-entry {
+  padding: 10px;
+  margin: 0 auto;
+  border: 1px solid;
+}
 #searchTerm, #searchLocation {
   padding: 10px;
   margin: 10px;
   border: 1px solid #897C80;
+  border-top: none;
+  border-bottom: none;
   border-radius: 12px;
   width: 30%;
 }
 
-#results {
-  border: 1px solid #897C80;
-  border-radius: 12px;
-  margin: 0 auto;
-  padding: 10px;
-}
