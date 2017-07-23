@@ -6,10 +6,9 @@ function getDiceApi(searchTerm, searchLocation, callback) {
         "text": searchTerm,
         "city": searchLocation,
         "direct": 1,
-        "pgcnt": 10,
         "skill": searchTerm,
-        "sort": "sort=4",
-        "sd": "sd=a",
+        "sort": 4,
+        "sd": "a",
     	type:"get",
         maxResults: 25
     }
@@ -21,12 +20,14 @@ function displayResults(simple) {
     let items = simple.resultItemList;
     for (let i=0; i<items.length; i++){
    $('#results').append(`
-   		<div class="result-entry">
-   		<div id="title"><a href="${items[i].detailUrl}" target="blank">${items[i].jobTitle}</a></div>
-  		<div id="location">${items[i].location}</div>
-  		<div id="company">${items[i].company}</div>
- 		<div id="date">${items[i].date}</div>
- 		</div>
+   	<div class="container">
+	   	<div class="result-entry">
+	   		<div id="title"><a href="${items[i].detailUrl}" target="blank">${items[i].jobTitle}</a></div>
+	  		<div id="location">${items[i].location}</div>
+	  		<div id="company">${items[i].company}</div>
+	 		<div id="date">${items[i].date}</div>
+	 	</div>
+ 	</div>
  	`)
     }
 }
@@ -61,7 +62,7 @@ $(document).ready(function (){
         getDiceApi(searchTerm, searchLocation, displayResults);
     });
 
-	$('#toDo').submit(taskHandler);
+	$('#toDoForm').submit(taskHandler);
 	$('.check').on('click',checkHandler);
 	$('.delete').on('click', deleteHandler);
 	$('#calendar').fullCalendar({

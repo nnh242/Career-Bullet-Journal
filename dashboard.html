@@ -12,30 +12,30 @@
   </head>
   <body>
     <header class="page-header"><h1>Job Search Journal</h1></header>
-    <section name="jobSearch">
-    <form class="container" id="searchForm">
-    <input type="text" id="searchTerm" placeholder="Search for Jobs on Dice" name ="search"><input type="text" id="searchLocation" placeholder="City" name="location">
-    <button type="submit" id="searchButton">SEARCH</button>
+    <section class="jobSearch">
+      <form class="container" id="searchForm">
+        <input type="text" id="searchTerm" placeholder="Search for Jobs on Dice" name ="search"><input type="text" id="searchLocation" placeholder="City" name="location">
+        <button type="submit" id="searchButton">SEARCH</button>
     </form>
-    <div id="results" class="col-xs-12"> </div>
     </section>
-     <section name="toDoList">
-     <h3>To - Do List </h3>
-      <form id="toDo">
-        <input type="text" name="entry" id="entry" placeholder="Add a task">
-        <button type="submit" id="addTask">Add</button>
-      </form>
-      <ul class="list">
-        <li>
-          <span class="task">Prepare for interview</span><button class="check">check</button><button class="delete">delete</button>
-        </li>
-      </ul>
-    </section>    
-     <section name="calendar">
-      <div id="calendar"></div>
-    </section>
+    <div class="container">
+      <section id="results" ></section> 
+      <section id="right-div">      
+        <h3>To - Do List </h3>
+          <form id="toDoForm">
+            <input type="text" name="task-entry" id="entry" placeholder="Add a task">
+            <button type="submit" id="addTask">Add</button>
+          </form>
+          <ul class="list">
+            <li>
+              <span class="task">Prepare for interview</span><button class="check">check</button><button class="delete">delete</button>
+            </li>
+          </ul>
+        <div id="calendar"></div>
+      </section>    
+    </div>
     <footer>
-    <button type="button" id="logOut" class="centered">Close Journal</button>
+      <button type="button" id="logOut" class="centered">Close Journal</button>
     </footer>
    <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
