@@ -34,18 +34,20 @@ function displayResults(simple) {
 function taskHandler(event){
 	event.preventDefault();
 	let newTask = $("#entry").val();
-	$('.list').append(
+    $('.list').append(
 		`<li>
-          <span class="task">${newTask}</span><button class="check">check</button><button class="delete">delete</button>      
+          <span class="task">${newTask}</span><button onclick="checkHandler()" class="check">check</button><button onclick ="deleteHandler()" class="delete">delete</button>      
         </li>
       `);
+    $('#entry').val('');
 }
+
 function deleteHandler(event){
-	$('.delete').closest('li').remove();
+	$(this).closest('li').remove();
 }
 
 function checkHandler(event) {
-	$('.check').closest('li').find('.task').toggleClass('.task_checked');
+	$(this).closest('li').find('.task').toggleClass('task_checked');
 }
 
 function logOut(){
@@ -63,8 +65,8 @@ $(document).ready(function (){
     });
 
 	$('#toDoForm').submit(taskHandler);
-	$('.check').on('click',checkHandler);
-	$('.delete').on('click', deleteHandler);
+	$('.list').on('click','.check', checkHandler);
+	$('.list').on('click','.delete',deleteHandler);
 	$('#calendar').fullCalendar({
         // put your options and callbacks here
 		schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
