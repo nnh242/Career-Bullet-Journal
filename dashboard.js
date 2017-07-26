@@ -55,6 +55,25 @@ function logOut(){
 }
 
 $("#logOut").on('click', logOut);
+//create input boxes so users can enter title of event, start, end and allDay is a boolean variable
+function getEvents(){
+    return [
+        {
+            title  : 'event1',
+            start  : '2017-07-25'
+        },
+        {
+            title  : 'event2',
+            start  : '2017-07-26',
+            end    : '2017-07-26'
+        },
+        {
+            title  : 'event3',
+            start  : '2017-07-24T12:30:00',
+            allDay : false // will make the time show
+        }
+    ]
+}
 
 $(document).ready(function (){
     $('#searchForm').submit(function(event) {
@@ -70,16 +89,7 @@ $(document).ready(function (){
 	$('#calendar').fullCalendar({
         // put your options and callbacks here
 		schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
-    	defaultView: 'agendaDay',
-    	events: [
-    	{
-            title: 'Event1',
-            start: '2017-07-22'
-        },
-        {
-            title: 'Event2',
-            start: '2017-07-25'
-        }
-    	]
+    	defaultView: 'agendaWeek',
+    	events: getEvents()
     });
 });
