@@ -1,77 +1,90 @@
 * {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -ms-box-sizing: border-box;
     box-sizing: border-box;
 }
 
 body#background {
-background: url("http://res.cloudinary.com/thcloud/image/upload/e_blur:100,fl_keep_iptc,q_58/v1500437125/Job%20Journal%20Background.jpg") no-repeat 50% 50% fixed;
-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
--webkit-background-size: cover;
+  background: url("http://res.cloudinary.com/thcloud/image/upload/e_blur:100,fl_keep_iptc,q_58/v1500437125/Job%20Journal%20Background.jpg") no-repeat 50% 50% fixed;
+  background-size: cover;
+  font-family: 'Annie Use Your Telescope', cursive;
 }
 
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { 
+  body#background {
+    background: url("http://res.cloudinary.com/thcloud/image/upload/e_blur:100,fl_keep_iptc,q_58/v1500437125/Job%20Journal%20Background.jpg") no-repeat 50% 50% fixed;
+  }
+ }
 
-.page-header {
-    padding-left: 20px;
-    color:#897C80;
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { 
+  body#background {
+    background: url("http://res.cloudinary.com/thcloud/image/upload/e_blur:100,fl_keep_iptc,q_58/v1500437125/Job%20Journal%20Background.jpg") no-repeat 50% 50% fixed;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+body#background {
+    background: url("http://res.cloudinary.com/thcloud/image/upload/e_blur:100,fl_keep_iptc,q_58/v1500437125/Job%20Journal%20Background.jpg") no-repeat 50% 50% fixed;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { 
+body#background {
+    background: url("http://res.cloudinary.com/thcloud/image/upload/e_blur:100,fl_keep_iptc,q_58/v1500437125/Job%20Journal%20Background.jpg") no-repeat 50% 50% fixed;
+  }
+}
+
+#summary {
+  color: #565656;
+}
+
+header {
+  color: ;
+  font-weight: bolder;
+  margin:0;
+  padding: 30px;
 }
 
 #login {
   margin: 0 auto;
-  position: fixed;
-  top: 30%;
-  left: 20%;
-  -moz-transform: translate3d(-50%, 0, 0);
-  -ms-transform: translate3d(-50%, 0, 0);
-  -webkit-transform: translate3d(-50%, 0, 0);
-  transform: translate3d(-50%, 0, 0);
-  width: 350px;
+  display:block;
+  vertical-align: middle;
+  width: 300px;
   padding: 20px;
-  overflow: hidden;
-  border: 1px solid #897C80;
-  background: inherit;
+  border: 1px solid #C09F80;
   border-radius: 10px;
+  background: inherit;
 }
 
- .topbar .input {
-  display: block;
-  width: 100%;
-  position: relative;
-  border-top-left-radius: 6px;
-  border-bottom-left-radius: 6px;
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
-  font-size: 1em;
+ .topbar #password {
+  display: inline-block;
+  position:relative;
+  width: 90%;
+  border-radius: 6px;
+  font-size: 1.5em;
   font-weight: bold;
   background: transparent;
-  border-top: 1px solid #897C80;
-  border-left: 1px solid #897C80;
-  border-bottom: 1px solid #897C80;
-  border-right: 1px solid #897C80;
-  margin-bottom: 25px;
+  border: 1px solid #C09F80;
+  margin-bottom: 20px;
   color: white;
-  padding: 10px 20px;
+  padding: 10px;
 }
 
-.submit {
-  padding: 10px 20px;
+#submit {
+  padding: 10px;
   width: 100%;
   font-size: 1.5em;
   font-weight: 200;
-  display: block;
+  display: inline-block;
   color: white;
   position: relative;
-  border: 1px solid #897C80 ;
-  background: #897C80;
-  -moz-border-radius: 6px;
-  -webkit-border-radius: 6px;
+  border: 1px solid #C09F80;
+  background: #76323F;
   border-radius: 6px;
   cursor: pointer;
 }
-
 
 
 #logOut, #addTask, .check, .delete {

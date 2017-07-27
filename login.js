@@ -1,4 +1,4 @@
-const pass = "iwillgetadeveloperjob";
+const pass = "iwillgetajob";
 const btn = $('#submit');
 
 
