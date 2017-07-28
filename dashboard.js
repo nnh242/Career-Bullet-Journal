@@ -31,6 +31,7 @@ function displayResults(simple) {
  	`)
     }
 }
+
 function taskHandler(event){
 	event.preventDefault();
 	let newTask = $("#entry").val();
@@ -53,43 +54,26 @@ function checkHandler(event) {
 function logOut(){
     window.location.href="login.html";
 }
-
 $("#logOut").on('click', logOut);
-//create input boxes so users can enter title of event, start, end and allDay is a boolean variable
-function getEvents(){
-    return [
-        {
-            title  : 'event1',
-            start  : '2017-07-25'
-        },
-        {
-            title  : 'event2',
-            start  : '2017-07-26',
-            end    : '2017-07-26'
-        },
-        {
-            title  : 'event3',
-            start  : '2017-07-24T12:30:00',
-            allDay : false // will make the time show
-        }
-    ]
-}
 
 $(document).ready(function (){
+    let rawDate = new Date();
+    let stringDate = rawDate.toString();
+    let displayDate= stringDate.slice(-57,-29);
+    $("#today").text(displayDate);
+    
     $('#searchForm').submit(function(event) {
         event.preventDefault();
         let searchTerm= $(this).find('input[id="searchTerm"]').val().trim();
         let searchLocation =$(this).find('input[id="searchLocation"]').val().trim();
         getDiceApi(searchTerm, searchLocation, displayResults);
     });
-
 	$('#toDoForm').submit(taskHandler);
 	$('.list').on('click','.check', checkHandler);
 	$('.list').on('click','.delete',deleteHandler);
 	$('#calendar').fullCalendar({
         // put your options and callbacks here
 		schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
-    	defaultView: 'agendaWeek',
-    	events: getEvents()
+    	defaultView: 'agendaWeek'
     });
 });

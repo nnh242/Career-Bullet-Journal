@@ -2,10 +2,17 @@
     box-sizing: border-box;
 }
 
+body {
+  font-family: 'Overpass', Sans-Serif;
+  font-size: 17px;
+}
+body#dashboard {
+  font-family: 'Fira Sans', Sans-Serif;
+  font-size: 15px;
+}
 body#background {
   background: url("http://res.cloudinary.com/thcloud/image/upload/e_blur:100,fl_keep_iptc,q_58/v1500437125/Job%20Journal%20Background.jpg") no-repeat 50% 50% fixed;
   background-size: cover;
-  font-family: 'Annie Use Your Telescope', cursive;
 }
 
 // Small devices (landscape phones, 576px and up)
@@ -37,14 +44,19 @@ body#background {
 }
 
 #summary {
-  color: #565656;
+  color: ##C09F80;
 }
 
 header {
-  color: ;
-  font-weight: bolder;
+  color: #565656;
+  font-family: 'Permanent Marker', Cursive;
+  font-size: 55px;
   margin:0;
   padding: 30px;
+}
+
+#today {
+  font-family:'Cormorant Garamond', Serif;
 }
 
 #login {
@@ -63,8 +75,6 @@ header {
   position:relative;
   width: 90%;
   border-radius: 6px;
-  font-size: 1.5em;
-  font-weight: bold;
   background: transparent;
   border: 1px solid #C09F80;
   margin-bottom: 20px;
@@ -75,8 +85,6 @@ header {
 #submit {
   padding: 10px;
   width: 100%;
-  font-size: 1.5em;
-  font-weight: 200;
   display: inline-block;
   color: white;
   position: relative;
@@ -86,22 +94,51 @@ header {
   cursor: pointer;
 }
 
+#searchButton {
+  padding: 10px;
+  background: #76323F;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+}
 
 #logOut, #addTask, .check, .delete {
   margin: auto;
   margin-top: 3em;
   background: none;
   border: 0px;
-  color: #897C80;
+  color: #76323F;
   font-size: 15px;
+  font-weight: bold;
   cursor: pointer;
 }
+#toDoBox {
+  border: 3px dashed #C09F80;
+}
+#toDoHeader {
+  border-bottom: 1px solid #C09F80;
+  text-align: center;
+}
+
 .task_checked {
   text-decoration: line-through;
 }
 
 .list {
   list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+li {
+  padding-left: 1em;
+  text-indent: -1em;
+  text-align: left;
+}
+
+li:before {
+  content: "x";
+  padding-right: 5px;
 }
 
 .container {
@@ -111,29 +148,18 @@ header {
 }
 
 #results {
-display:inline-block;
-text-align:left;
-max-width: 40%;
 vertical-align: top;
 margin: 25px auto;
 overflow-x: auto;
-height: 800px;
-}
 
-#right-div {
-display:inline-block;
-text-align: center;
-max-width: 40%;
-margin: 25px auto;
-height: 800px;
+font-family: 'Fira Sans', Sans-Serif;  
+border: 3px dotted #897C80;
 }
 
 .result-entry {
   padding: 10px;
   margin: 0 auto;
-  border: 1px solid #897C80;
-  border-top: none;
-  border-bottom: none;
+  text-align:left;
 }
 
 #searchTerm, #searchLocation, #entry {
@@ -154,4 +180,6 @@ height: 800px;
 
 #calendar {
   margin-top: 30px;
+  padding: 5px;
+  border: solid 1px #C09F80;
 }
