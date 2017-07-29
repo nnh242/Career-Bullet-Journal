@@ -57,6 +57,14 @@ body#background {
 body#dashboard {
   font-family: 'Overpass', Sans-Serif;
   font-size: 16px;
+  background-color: #F4D8C3;
+}
+
+#dash-header {
+  background-color: white;
+  padding: 10 px;
+  border: 1px solid #C09F80;
+  border-radius: 6px;
 }
 
 h2 {
@@ -77,12 +85,19 @@ h2 {
   text-align: center;
 }
 
-#today {
+#name {
+  color: #565656;
+  font-family: 'Permanent Marker', Cursive;
+  font-size: 13px;
+}
+
+#noteHeader {
   color: #5F6366;
   font-family:'Permanent Marker', Cursive;
-  font-size: 30px;
-  padding: 0;
-  margin: 0;
+  font-size: 20px;
+  text-align: center;
+  padding: 10px;
+  margin: 10px;
 }
 
 #login {
@@ -96,15 +111,14 @@ h2 {
   background: inherit;
 }
 
- .topbar #password {
+#password {
   display: inline-block;
   position:relative;
-  width: 90%;
+  width: 100%;
   border-radius: 6px;
-  background: transparent;
   border: 1px solid #C09F80;
   margin-bottom: 20px;
-  color: white;
+  color: #76323F;
   padding: 10px;
 }
 
@@ -130,7 +144,7 @@ h2 {
 
 #logOut, #addButton, .check, .delete {
   margin: auto;
-  margin-top: 3em;
+  margin-top: 10px;
   background: none;
   border: 0px;
   color: #76323F;
@@ -139,27 +153,31 @@ h2 {
   cursor: pointer;
 }
 
-#logOut {
-  vertical-align: top;
-}
 
 #toDoBox {
-  border: 2px dotted #C09F80;
-  padding: 5px;
+  border: 2px solid #C09F80;
+  border-radius: 12px;
+  padding: 20px;
+  background-color: white;
+  height: 300px;
 }
 #toDoHeader {
-  border-bottom: 1px solid #C09F80;
+  border-bottom: 1px dashed #76323F;
   text-align: center;
 }
 
 #listBox {
-  border: 2px dotted black;
-  padding: 5px;
+  border: 2px solid #C09F80;
+  border-radius: 12px;
+  padding: 20px;
+  background-color: white;
+  height: 300px;
 }
 
 #listHeader {
-  border-bottom: 2px dotted #C09F80;
+  border-bottom: 2px dashed #76323F;
   text-align: center;
+  margin: 0;
 }
 
 
@@ -182,6 +200,49 @@ li {
 li:before {
   content: "o";
   padding-right: 5px;
+}
+
+#results {
+vertical-align: top;
+margin: 25px auto;
+overflow-x: auto;
+font-family: 'Fira Sans', Sans-Serif;  
+}
+
+.result-entry {
+  padding: 10px;
+  margin: 0 auto;
+  text-align:left;
+}
+
+#title{
+  text-decoration: none;
+  color: #76323F;
+}
+
+#searchTerm, #searchLocation, #entry, #listEntry {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #897C80;
+  border-top: none;
+  border-bottom: none;
+  border-radius: 12px;
+  width: 30%;
+}
+
+
+
+#searchForm{
+  margin: 0 auto;
+  text-align: center;
+}
+
+#calendar {
+  margin-top: 20px;
+  padding: 20px;
+  border: solid 1px #C09F80;
+  border-radius: 12px;
+  background-color: white;
 }
 
 // Small devices (landscape phones, 576px and up)
@@ -210,42 +271,3 @@ body#background {
     background: url("http://res.cloudinary.com/thcloud/image/upload/e_blur:100,fl_keep_iptc,q_58/v1500437125/Job%20Journal%20Background.jpg") no-repeat 50% 50% fixed;
   }
 }
-
-#results {
-vertical-align: top;
-margin: 25px auto;
-overflow-x: auto;
-font-family: 'Fira Sans', Sans-Serif;  
-}
-
-.result-entry {
-  padding: 10px;
-  margin: 0 auto;
-  text-align:left;
-}
-
-.result-entry#title{
-  text-decoration: none;
-  color: #76323F;
-}
-
-#searchTerm, #searchLocation, #entry, #listEntry {
-  padding: 10px;
-  margin: 5px;
-  border: 1px solid #897C80;
-  border-top: none;
-  border-bottom: none;
-  border-radius: 12px;
-  width: 30%;
-}
-
-#searchForm{
-  margin: 0 auto;
-  text-align: center;
-}
-
-#calendar {
-  padding: 20px;
-  border: solid 1px #C09F80;
-}
-

@@ -20,7 +20,7 @@ function displayResults(simple) {
     let items = simple.resultItemList;
     for (let i=0; i<items.length; i++){
    $('#results').append(`
-   	<div class="container">
+   	<div class="result-card">
 	   	<div class="result-entry">
 	   		<div id="title"><a href="${items[i].detailUrl}" target="blank">${items[i].jobTitle}</a></div>
 	  		<div id="location">${items[i].location}</div>
