@@ -43,6 +43,17 @@ function taskHandler(event){
     $('#entry').val('');
 }
 
+function listHandler (event){
+    event.preventDefault();
+    let newEntry = $("#listEntry").val();
+    $('any-list').append(
+        `<li>
+          <span class="task">${newEntry}</span>     
+        </li>
+      `);
+    $('#listEntry').val('');
+}
+
 function deleteHandler(event){
 	$(this).closest('li').remove();
 }
@@ -59,21 +70,23 @@ $("#logOut").on('click', logOut);
 $(document).ready(function (){
     let rawDate = new Date();
     let stringDate = rawDate.toString();
-    let displayDate= stringDate.slice(-57,-29);
+    let displayDate= stringDate.slice(-57,-47);
     $("#today").text(displayDate);
     
     $('#searchForm').submit(function(event) {
         event.preventDefault();
+        $('#calendar').hide();
         let searchTerm= $(this).find('input[id="searchTerm"]').val().trim();
         let searchLocation =$(this).find('input[id="searchLocation"]').val().trim();
         getDiceApi(searchTerm, searchLocation, displayResults);
     });
 	$('#toDoForm').submit(taskHandler);
+    $('#listForm').submit(listHandler);
 	$('.list').on('click','.check', checkHandler);
 	$('.list').on('click','.delete',deleteHandler);
 	$('#calendar').fullCalendar({
         // put your options and callbacks here
 		schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
-    	defaultView: 'agendaWeek'
+    	defaultView: 'month'
     });
 });

@@ -1,62 +1,88 @@
+body#background {
+  background: url("http://res.cloudinary.com/thcloud/image/upload/e_blur:100,fl_keep_iptc,q_58/v1500437125/Job%20Journal%20Background.jpg") no-repeat 50% 50% fixed;
+  background-size: cover;
+  font-family: 'Overpass', Sans-Serif;
+  font-size: 12px;
+}
+
+
 * {
     box-sizing: border-box;
 }
 
-body {
-  font-family: 'Overpass', Sans-Serif;
-  font-size: 17px;
+.row {
+  max-width: 1000px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 auto;
 }
+
+.row::before, .row::after {
+  display: table;
+  content: '';
+}
+
+.row::after {
+  clear: both;
+}
+
+.col-3, .col-4, .col-6, .col-12 {
+  float: left;
+  padding-left: 1.04166666%;
+  padding-right: 1.04166666%;
+}
+
+.col-3, .col-4, .col-6, .col-12 {
+  width: 100%;
+}
+
+@media only screen and (min-width: 640px) {
+  .col-3 {
+    width: 25%;
+  }
+
+  .col-4 {
+    width: 33.33%;
+  }
+
+  .col-6 {
+    width: 50%;
+  }
+
+  .col-12 {
+    width: 100%;
+  }
+}
+
 body#dashboard {
-  font-family: 'Fira Sans', Sans-Serif;
-  font-size: 15px;
-}
-body#background {
-  background: url("http://res.cloudinary.com/thcloud/image/upload/e_blur:100,fl_keep_iptc,q_58/v1500437125/Job%20Journal%20Background.jpg") no-repeat 50% 50% fixed;
-  background-size: cover;
+  font-family: 'Overpass', Sans-Serif;
+  font-size: 16px;
 }
 
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) { 
-  body#background {
-    background: url("http://res.cloudinary.com/thcloud/image/upload/e_blur:100,fl_keep_iptc,q_58/v1500437125/Job%20Journal%20Background.jpg") no-repeat 50% 50% fixed;
-  }
- }
-
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) { 
-  body#background {
-    background: url("http://res.cloudinary.com/thcloud/image/upload/e_blur:100,fl_keep_iptc,q_58/v1500437125/Job%20Journal%20Background.jpg") no-repeat 50% 50% fixed;
-  }
-}
-
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-body#background {
-    background: url("http://res.cloudinary.com/thcloud/image/upload/e_blur:100,fl_keep_iptc,q_58/v1500437125/Job%20Journal%20Background.jpg") no-repeat 50% 50% fixed;
-  }
-}
-
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) { 
-body#background {
-    background: url("http://res.cloudinary.com/thcloud/image/upload/e_blur:100,fl_keep_iptc,q_58/v1500437125/Job%20Journal%20Background.jpg") no-repeat 50% 50% fixed;
-  }
+h2 {
+  text-align: center;
 }
 
 #summary {
-  color: ##C09F80;
+  color: #76323F;
+  font-size: 17px;
+  text-align: center;
 }
 
-header {
+.page-header {
   color: #565656;
   font-family: 'Permanent Marker', Cursive;
   font-size: 55px;
-  margin:0;
-  padding: 30px;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 #today {
-  font-family:'Cormorant Garamond', Serif;
+  color: #5F6366;
+  font-family:'Permanent Marker', Cursive;
+  font-size: 30px;
+  padding: 0;
+  margin: 0;
 }
 
 #login {
@@ -102,7 +128,7 @@ header {
   color: white;
 }
 
-#logOut, #addTask, .check, .delete {
+#logOut, #addButton, .check, .delete {
   margin: auto;
   margin-top: 3em;
   background: none;
@@ -112,19 +138,36 @@ header {
   font-weight: bold;
   cursor: pointer;
 }
+
+#logOut {
+  vertical-align: top;
+}
+
 #toDoBox {
-  border: 3px dashed #C09F80;
+  border: 2px dotted #C09F80;
+  padding: 5px;
 }
 #toDoHeader {
   border-bottom: 1px solid #C09F80;
   text-align: center;
 }
 
+#listBox {
+  border: 2px dotted black;
+  padding: 5px;
+}
+
+#listHeader {
+  border-bottom: 2px dotted #C09F80;
+  text-align: center;
+}
+
+
 .task_checked {
   text-decoration: line-through;
 }
 
-.list {
+.list, .any-list {
   list-style: none;
   margin-left: 0;
   padding-left: 0;
@@ -137,23 +180,42 @@ li {
 }
 
 li:before {
-  content: "x";
+  content: "o";
   padding-right: 5px;
 }
 
-.container {
-  width :100%;
-  display: block;
-  text-align: center;
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { 
+  body#background {
+    background: url("http://res.cloudinary.com/thcloud/image/upload/e_blur:100,fl_keep_iptc,q_58/v1500437125/Job%20Journal%20Background.jpg") no-repeat 50% 50% fixed;
+  }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { 
+  body#background {
+    background: url("http://res.cloudinary.com/thcloud/image/upload/e_blur:100,fl_keep_iptc,q_58/v1500437125/Job%20Journal%20Background.jpg") no-repeat 50% 50% fixed;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+body#background {
+    background: url("http://res.cloudinary.com/thcloud/image/upload/e_blur:100,fl_keep_iptc,q_58/v1500437125/Job%20Journal%20Background.jpg") no-repeat 50% 50% fixed;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { 
+body#background {
+    background: url("http://res.cloudinary.com/thcloud/image/upload/e_blur:100,fl_keep_iptc,q_58/v1500437125/Job%20Journal%20Background.jpg") no-repeat 50% 50% fixed;
+  }
 }
 
 #results {
 vertical-align: top;
 margin: 25px auto;
 overflow-x: auto;
-
 font-family: 'Fira Sans', Sans-Serif;  
-border: 3px dotted #897C80;
 }
 
 .result-entry {
@@ -162,7 +224,12 @@ border: 3px dotted #897C80;
   text-align:left;
 }
 
-#searchTerm, #searchLocation, #entry {
+.result-entry#title{
+  text-decoration: none;
+  color: #76323F;
+}
+
+#searchTerm, #searchLocation, #entry, #listEntry {
   padding: 10px;
   margin: 5px;
   border: 1px solid #897C80;
@@ -173,13 +240,12 @@ border: 3px dotted #897C80;
 }
 
 #searchForm{
-  margin: auto;
-  margin-bottom: 30px;
+  margin: 0 auto;
   text-align: center;
 }
 
 #calendar {
-  margin-top: 30px;
-  padding: 5px;
+  padding: 20px;
   border: solid 1px #C09F80;
 }
+

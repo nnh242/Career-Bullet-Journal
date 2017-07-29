@@ -5,46 +5,81 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
        <title>Career Bullet Journal - Dashboard</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Overpass|Permanent+Marker" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:700i|Fira+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.css">
     <link rel="stylesheet" href='scheduler.min.css'>
+    <link rel="stylesheet" href="main.css">
   </head>
+  
   <body id="dashboard">
-    <header class="page-header" id="today"></header>
-    <section class="jobSearch">
-      <form class="container" id="searchForm">
-        <input type="text" id="searchTerm" placeholder="Search for jobs, skills, etc." name ="search"><input type="text" id="searchLocation" placeholder="Zipcode" name="location">
-        <button type="submit" id="searchButton">SEARCH</button>
-    </form>
-    </section>
-      <section id="searchResults" > <div id="results"> </div> </section> 
-      <section id="right-div">      
-        <div id="toDoBox" class="container">
-          <div id="toDoHeader"><h3>To - Do List </h3></div>
-          <form id="toDoForm">
-            <input type="text" name="task-entry" id="entry" placeholder="Add a task">
-            <button type="submit" id="addTask">Add</button>
-          </form>
-          <ul class="list">
-            <li>
-              <span class="task">Prepare for interview</span><button onclick="checkHandler()" class="check">check</button><button onclick ="deleteHandler()" class="delete">delete</button>
-            </li>
-          </ul>
-        </div>
-        <div id="calendar"></div>
-      </section>    
+    <header class="row">
+      <div class="col-3">
+        <div id="today"></div>
+      </div>
+      <div class="col-6">
+        <form id="searchForm">
+          <input type="text" id="searchTerm" placeholder="Search for jobs" name ="search"><input type="text" id="searchLocation" placeholder="Zipcode" name="location">
+          <button type="submit" id="searchButton">SEARCH</button>
+        </form>
+      </div>
+      <div class="col-3">
+        <button type="button" id="logOut">Close Journal</button>
+      </div>
+    </header>
+
+    <div class="row">
+      <div class="col-12">
+        <div id="results"> </div>
+      </div>
     </div>
-    <footer>
-      <button type="button" id="logOut" class="centered">Close Journal</button>
-    </footer>
+
+    <div class="row">
+      <div id="calendar" class="col-12"></div>  
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <h2>Notes</h2>
+      </div>
+    </div>
+
+    <div class ="row">
+      <div class="col-6">
+        <div id="toDoBox">     
+        <div id="toDoHeader">
+          <form id="toDoForm">
+            <input type="text" name="task-entry" id="entry" placeholder="Tasks">
+            <button type="submit" id="addButton">Add</button>
+          </form>
+        </div>   
+        <ul class="list">
+          <li>
+            <span class="task">Prepare for interview</span><button onclick="checkHandler()" class="check">check</button><button onclick ="deleteHandler()" class="delete">delete</button>
+          </li>
+        </ul>
+      </div>
+      </div>
+      <div class="col-6">
+        <div id="listBox">     
+        <div id="listHeader">
+          <form id="listForm">
+            <input type="text" name="list-entry" id="listEntry" placeholder="Any Lists">
+            <button type="submit" id="addButton">Add</button>
+          </form>
+        </div>   
+        <ul class="any-list">
+          <li>
+            <span class="item"> write reusuable code</span>
+          </li>
+        </ul>
+      </div>
+    </div>  
+
    <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
   <script src="scheduler.min.js"></script>
