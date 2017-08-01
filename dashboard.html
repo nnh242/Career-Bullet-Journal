@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Overpass|Permanent+Marker" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:700i|Fira+Sans" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.css">
+    
     <link rel="stylesheet" href='scheduler.min.css'>
     <link rel="stylesheet" href="main.css">
   </head>
@@ -19,7 +20,7 @@
       </div>
       <div class="col-6">
         <form id="searchForm">
-          <input type="text" id="searchTerm" placeholder="Search for jobs" name ="search"><input type="text" id="searchLocation" placeholder="Zipcode" name="location">
+          <input type="text" id="searchTerm" placeholder="Search for jobs" name ="search"/><input type="text" id="searchLocation" placeholder="Zipcode" name="location"/>
           <button type="submit" id="searchButton">SEARCH</button>
         </form>
       </div>
@@ -27,6 +28,12 @@
         <button type="button" id="logOut">Close Journal</button>
       </div>
     </header>
+
+    <div class="row">
+      <div class="col-12">
+        <div id="results" class="hidden"> </div>
+      </div>
+    </div>
 
     <div class="row"> 
       <div class ="col-12" id="noteHeader"> Notes for <span id="today"></span> </div>
@@ -37,7 +44,7 @@
         <div id="toDoBox">     
         <div id="toDoHeader">
           <form id="toDoForm">
-            <input type="text" name="task-entry" id="entry" placeholder="Tasks">
+            <input type="text" name="task-entry" id="entry" placeholder="Tasks"/>
             <button type="submit" id="addButton">Add</button>
           </form>
         </div>   
@@ -52,28 +59,37 @@
         <div id="listBox">     
         <div id="listHeader">
           <form id="listForm">
-            <input type="text" name="list-entry" id="listEntry" placeholder="Any Lists">
+            <input type="text" name="list-entry" id="listEntry" placeholder="Any Lists"/>
             <button type="submit" id="addButton">Add</button>
           </form>
         </div>   
         <ul class="any-list">
           <li>
-            <span class="item"> write reusuable code</span>
+            <span class="item"> write reusuable code</span><button onclick ="deleteHandler()" class="delete">delete</button>
           </li>
         </ul>
       </div>
     </div>  
 
-    <div class="row">
-      <div class="col-12">
-        <div id="results"> </div>
-      </div>
+    <div class="row"> 
+      <div class ="col-12" id="scheduler"> Click on a timeslot to create a calendar event. You can drag and move events on calendar  </div>
     </div>
 
+    <div class ="row" id="createEvent">
+      <form id="createEvent" class="form-horizontal">
+        <label class="control-label" for="inputEvent">Event Name:</label>
+          <input type="text" name="eventName" id="eventName" tyle="margin: 0 auto;" data-provide="typeahead" data-items="4" data-source="[&quot;Value 1&quot;,&quot;Value 2&quot;,&quot;Value 3&quot;]">
+          <input type="hidden" id="eventStartTime"/>
+          <input type="hidden" id="eventEndTime"/>
+          <input type="hidden" id="eventAllDay"/>
+        <button class="buttons">Cancel</button>
+        <button class="buttons" type="submit" id="submitButton" >Save</button>
+    </form>
+    </div>
+  
     <div class="row">
       <div id="calendar" class="col-12"></div>  
     </div>
-
    <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="

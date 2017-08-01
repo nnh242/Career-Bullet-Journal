@@ -7,10 +7,10 @@ function getDiceApi(searchTerm, searchLocation, callback) {
         "city": searchLocation,
         "direct": 1,
         "skill": searchTerm,
-        "sort": 4,
+        "sort": 1,
         "sd": "a",
     	type:"get",
-        maxResults: 25
+        maxResults: 50
     }
     $.getJSON(DICE_URL, params, callback);
 }
@@ -20,7 +20,8 @@ function displayResults(simple) {
     let items = simple.resultItemList;
     for (let i=0; i<items.length; i++){
    $('#results').append(`
-   	<div class="result-card">
+   	<div class="row">
+      <div class="col-12 result-card">
 	   	<div class="result-entry">
 	   		<div id="title"><a href="${items[i].detailUrl}" target="blank">${items[i].jobTitle}</a></div>
 	  		<div id="location">${items[i].location}</div>
@@ -46,9 +47,9 @@ function taskHandler(event){
 function listHandler (event){
     event.preventDefault();
     let newEntry = $("#listEntry").val();
-    $('any-list').append(
+    $('.any-list').append(
         `<li>
-          <span class="task">${newEntry}</span>     
+          <span class="task">${newEntry}</span><button onclick ="deleteHandler()" class="delete">delete</button>     
         </li>
       `);
     $('#listEntry').val('');
@@ -75,18 +76,48 @@ $(document).ready(function (){
     
     $('#searchForm').submit(function(event) {
         event.preventDefault();
-        $('#calendar').hide();
         let searchTerm= $(this).find('input[id="searchTerm"]').val().trim();
         let searchLocation =$(this).find('input[id="searchLocation"]').val().trim();
+        $('#results').removeClass('hidden');
         getDiceApi(searchTerm, searchLocation, displayResults);
     });
 	$('#toDoForm').submit(taskHandler);
     $('#listForm').submit(listHandler);
 	$('.list').on('click','.check', checkHandler);
 	$('.list').on('click','.delete',deleteHandler);
+    $('.any-list').on('click','.delete',deleteHandler);
+     $('#createEvent').hide();
 	$('#calendar').fullCalendar({
-        // put your options and callbacks here
 		schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
-    	defaultView: 'month'
+    	defaultView: 'agendaWeek',
+        selectable: true,
+        editable: true,
+        select: function(start, end) {
+      endTime = $.fullCalendar.formatDate(end,'h:mm');
+      startTime = $.fullCalendar.formatDate(start,'ddd, MMM d, h:mm');
+      $('#createEvent #eventStartTime').val(start);
+      $('#createEvent #eventEndTime').val(end);
+      $('#eventName').val('');
+      $('#createEvent').show()
+      $('#submitButton').on('click', function(event){
+        event.preventDefault();
+        eventHandler();
+  });
+
+  function eventHandler(){
+    $('#createEvent').hide();
+    inputTitle= $('#eventName').val();
+    eventTitle= inputTitle.toString();
+    alert("event created");
+    
+    $("#calendar").fullCalendar('renderEvent',
+        {
+            title: $('#eventName').val(),
+            start: new Date($('#eventStartTime').val()),
+            end: new Date($('#eventEndTime').val()),
+        },
+        true);
+   }
+   }
     });
 });

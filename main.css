@@ -92,7 +92,7 @@ h2 {
 }
 
 #noteHeader {
-  color: #5F6366;
+  color: #76323F;
   font-family:'Permanent Marker', Cursive;
   font-size: 20px;
   text-align: center;
@@ -137,12 +137,12 @@ h2 {
 #searchButton {
   padding: 10px;
   background: #76323F;
-  border-radius: 6px;
+  border-radius: 12px;
   cursor: pointer;
   color: white;
 }
 
-#logOut, #addButton, .check, .delete {
+#logOut, #addButton, .check, .delete, .buttons {
   margin: auto;
   margin-top: 10px;
   background: none;
@@ -153,6 +153,10 @@ h2 {
   cursor: pointer;
 }
 
+#logOut{
+  margin-top: 20px;
+  padding-top: 20px;
+}
 
 #toDoBox {
   border: 2px solid #C09F80;
@@ -160,6 +164,7 @@ h2 {
   padding: 20px;
   background-color: white;
   height: 300px;
+  margin-bottom: 10px;
 }
 #toDoHeader {
   border-bottom: 1px dashed #76323F;
@@ -172,6 +177,7 @@ h2 {
   padding: 20px;
   background-color: white;
   height: 300px;
+  margin-bottom: 10px;
 }
 
 #listHeader {
@@ -180,6 +186,10 @@ h2 {
   margin: 0;
 }
 
+#entry, #listEntry {
+  width: 60%;
+  margin: 10px;
+}
 
 .task_checked {
   text-decoration: line-through;
@@ -202,11 +212,16 @@ li:before {
   padding-right: 5px;
 }
 
+.hidden {
+  display:none;
+}
+
 #results {
 vertical-align: top;
 margin: 25px auto;
 overflow-x: auto;
 font-family: 'Fira Sans', Sans-Serif;  
+height: 500px;
 }
 
 .result-entry {
@@ -215,9 +230,17 @@ font-family: 'Fira Sans', Sans-Serif;
   text-align:left;
 }
 
+
+.result-card {
+  background-color: white;
+  border: solid 1px #C09F80;
+  border-radius: 12px;
+  margin: 5px;
+}
+
 #title{
   text-decoration: none;
-  color: #76323F;
+  color:#76323F;
 }
 
 #searchTerm, #searchLocation, #entry, #listEntry {
@@ -227,13 +250,14 @@ font-family: 'Fira Sans', Sans-Serif;
   border-top: none;
   border-bottom: none;
   border-radius: 12px;
+}
+
+#searchTerm, #searchLocation {
   width: 30%;
 }
 
-
-
 #searchForm{
-  margin: 0 auto;
+  margin: 20px auto;
   text-align: center;
 }
 
@@ -245,6 +269,18 @@ font-family: 'Fira Sans', Sans-Serif;
   background-color: white;
 }
 
+#scheduler {
+  color: #76323F;
+  font-family:'Permanent Marker', Cursive;
+  font-size: 20px;
+  text-align: center;
+  padding: 10px;
+  margin: 10px;
+}
+
+#createEvent {
+  text-align: center;
+}
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) { 
   body#background {
