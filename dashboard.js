@@ -1,6 +1,6 @@
 const DICE_URL = "http://service.dice.com/api/rest/jobsearch/v1/simple.json?"
 
-
+// get the data from Dice API
 function getDiceApi(searchTerm, searchLocation, callback) {
     let params = {
         "text": searchTerm,
@@ -15,6 +15,7 @@ function getDiceApi(searchTerm, searchLocation, callback) {
     $.getJSON(DICE_URL, params, callback);
 }
 
+//display job posts that come from the Dice API
 function displayResults(simple) {
 	$('#results').empty();
     let items = simple.resultItemList;
@@ -33,6 +34,7 @@ function displayResults(simple) {
     }
 }
 
+//add a new task to the to-do list
 function taskHandler(event){
 	event.preventDefault();
 	let newTask = $("#entry").val();
@@ -44,6 +46,7 @@ function taskHandler(event){
     $('#entry').val('');
 }
 
+//add a new list item
 function listHandler (event){
     event.preventDefault();
     let newEntry = $("#listEntry").val();
@@ -54,15 +57,16 @@ function listHandler (event){
       `);
     $('#listEntry').val('');
 }
-
+// delete a task or list item
 function deleteHandler(event){
 	$(this).closest('li').remove();
 }
-
+// cross out completed task
 function checkHandler(event) {
 	$(this).closest('li').find('.task').toggleClass('task_checked');
 }
 
+//return to the landing page when user click "Close Journal"
 function logOut(){
     window.location.href="login.html";
 }
@@ -74,6 +78,7 @@ $(document).ready(function (){
     let displayDate= stringDate.slice(-57,-47);
     $("#today").text(displayDate);
     
+    // listen for user's search input
     $('#searchForm').submit(function(event) {
         event.preventDefault();
         let searchTerm= $(this).find('input[id="searchTerm"]').val().trim();
@@ -87,6 +92,8 @@ $(document).ready(function (){
 	$('.list').on('click','.delete',deleteHandler);
     $('.any-list').on('click','.delete',deleteHandler);
      $('#createEvent').hide();
+
+//implement the weekly calendar 
 	$('#calendar').fullCalendar({
 		schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
     	defaultView: 'agendaWeek',
@@ -104,11 +111,11 @@ $(document).ready(function (){
         eventHandler();
   });
 
+// create event from user input
   function eventHandler(){
     $('#createEvent').hide();
     inputTitle= $('#eventName').val();
     eventTitle= inputTitle.toString();
-    alert("event created");
     
     $("#calendar").fullCalendar('renderEvent',
         {
