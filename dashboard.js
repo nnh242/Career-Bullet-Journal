@@ -1,4 +1,4 @@
-const DICE_URL = "https://crossorigin.me/http://service.dice.com/api/rest/jobsearch/v1/simple.json?"
+const DICE_URL = "http://crossorigin.me/http://service.dice.com/api/rest/jobsearch/v1/simple.json?"
 
 // get the data from Dice API
 function getDiceApi(searchTerm, searchLocation, callback) {
