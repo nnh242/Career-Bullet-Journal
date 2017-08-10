@@ -72,10 +72,10 @@ function logOut(){
 }
 $("#logOut").on('click', logOut);
 
-//cancel event creation
-function cancelEvent(){
-    $('#createEventModal').hide();
-}
+// When user clicks on (x) close the modal
+$('.close').on('click', function () {
+    $('#createEventModal').addClass('hidden');
+});
 
 $(document).ready(function (){
     let rawDate = new Date();
@@ -96,7 +96,7 @@ $(document).ready(function (){
 	$('.list').on('click','.check', checkHandler);
 	$('.list').on('click','.delete',deleteHandler);
     $('.any-list').on('click','.delete',deleteHandler);
-    $('#cancelEventBtn').on('click',cancelEvent);
+
 
 //implement the weekly calendar 
 $('#calendar').fullCalendar({
@@ -105,7 +105,7 @@ $('#calendar').fullCalendar({
         selectable: true,
         editable: true,
         select: function(start, end, allDay) {
-        $('#createEventModal').show();
+        $('#createEventModal').removeClass('hidden');
         $('#eventName').val('');
         $('#createEvent').on('submit', function(event){
         event.preventDefault();
@@ -114,7 +114,7 @@ $('#calendar').fullCalendar({
 
 // create event from user input
   function eventHandler(){
-    $('#createEventModal').hide();
+    $('#createEventModal').addClass('hidden');
     $("#calendar").fullCalendar('renderEvent',
         {
             title: $('#eventName').val(),
