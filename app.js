@@ -72,6 +72,11 @@ function logOut(){
 }
 $("#logOut").on('click', logOut);
 
+//cancel event creation
+function cancelEvent(){
+    $('#createEventModal').hide();
+}
+
 $(document).ready(function (){
     let rawDate = new Date();
     let stringDate = rawDate.toString();
@@ -91,39 +96,34 @@ $(document).ready(function (){
 	$('.list').on('click','.check', checkHandler);
 	$('.list').on('click','.delete',deleteHandler);
     $('.any-list').on('click','.delete',deleteHandler);
-     $('#createEvent').hide();
+    $('#cancelEventBtn').on('click',cancelEvent);
 
 //implement the weekly calendar 
-	$('#calendar').fullCalendar({
-		schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
+$('#calendar').fullCalendar({
+        schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
     	defaultView: 'agendaWeek',
         selectable: true,
         editable: true,
-        select: function(start, end) {
-      let startTime = new Date(start).toISOString();
-      let endTime = new Date(end).toISOString();
-      $('#eventName').val('');
-      $('#createEvent').show()
-      $('#submitButton').on('click', function(event){
+        select: function(start, end, allDay) {
+        $('#createEventModal').show();
+        $('#eventName').val('');
+        $('#createEvent').on('submit', function(event){
         event.preventDefault();
         eventHandler();
-  });
+        });
 
 // create event from user input
   function eventHandler(){
-    $('#createEvent').hide();
-    inputTitle= $('#eventName').val();
-    eventTitle= inputTitle.toString();
-    
+    $('#createEventModal').hide();
     $("#calendar").fullCalendar('renderEvent',
         {
             title: $('#eventName').val(),
-            start: startTime,
-            end: endTime,
+            start: new Date(start).toISOString() ,
+            end:new Date(end).toISOString(),
             allDay: false
         },
         true);
+    }
    }
-   }
-    });
+});
 });

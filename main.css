@@ -61,7 +61,6 @@ body#dashboard {
 }
 
 #dash-header {
-  background-color: ;
   padding: 10 px;
   border: 1px solid #E91E63;
   border-radius: 6px;
@@ -86,7 +85,7 @@ h2 {
 }
 
 .page-header {
-  color: #565656;
+
   font-family: 'Permanent Marker', Cursive;
   font-size: 55px;
   margin-bottom: 20px;
@@ -94,13 +93,13 @@ h2 {
 }
 
 #name {
-  color: #565656;
+
   font-family: 'Permanent Marker', Cursive;
   font-size: 13px;
 }
 
 #noteHeader {
-  color: #76323F;
+
   font-size: 20px;
   text-align: center;
   padding: 10px;
@@ -143,10 +142,11 @@ h2 {
 
 #searchButton {
   padding: 10px;
-  background: #E91E63;
-  border-radius: 12px 50px;
+  background: #A846A0;
+  border-radius: 50px 12px;
   cursor: pointer;
   color: white;
+  font-family: 'Overpass', Sans-Serif;
 }
 
  #addButton, .check, .delete, .buttons {
@@ -154,7 +154,7 @@ h2 {
   margin-top: 10px;
   background: none;
   border: 0px;
-  color: #E91E63;
+  color: #A846A0;
   font-size: 15px;
   font-weight: bold;
   cursor: pointer;
@@ -279,7 +279,7 @@ height: 500px;
 }
 
 #scheduler {
-  color: #76323F;
+
   font-family:'Overpass', Sans-Serif;
   font-size: 20px;
   text-align: center;
