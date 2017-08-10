@@ -68,14 +68,14 @@ function checkHandler(event) {
 
 //return to the landing page when user click "Close Journal"
 function logOut(){
-    window.location.href="login.html";
+    window.location.href="index.html";
 }
 $("#logOut").on('click', logOut);
 
 $(document).ready(function (){
     let rawDate = new Date();
     let stringDate = rawDate.toString();
-    let displayDate= stringDate.slice(-57,-47);
+    let displayDate= stringDate.slice(-57,-42);
     $("#today").text(displayDate);
     
     // listen for user's search input
@@ -100,10 +100,8 @@ $(document).ready(function (){
         selectable: true,
         editable: true,
         select: function(start, end) {
-      endTime = $.fullCalendar.formatDate(end,'h:mm');
-      startTime = $.fullCalendar.formatDate(start,'ddd, MMM d, h:mm');
-      $('#createEvent #eventStartTime').val(start);
-      $('#createEvent #eventEndTime').val(end);
+      let startTime = new Date(start).toISOString();
+      let endTime = new Date(end).toISOString();
       $('#eventName').val('');
       $('#createEvent').show()
       $('#submitButton').on('click', function(event){
@@ -120,8 +118,9 @@ $(document).ready(function (){
     $("#calendar").fullCalendar('renderEvent',
         {
             title: $('#eventName').val(),
-            start: new Date($('#eventStartTime').val()),
-            end: new Date($('#eventEndTime').val()),
+            start: startTime,
+            end: endTime,
+            allDay: false
         },
         true);
    }

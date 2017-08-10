@@ -57,13 +57,13 @@ body#background {
 body#dashboard {
   font-family: 'Overpass', Sans-Serif;
   font-size: 16px;
-  background-color: #F4D8C3;
+  background-color: #FCE4EC;
 }
 
 #dash-header {
-  background-color: white;
+  background-color: ;
   padding: 10 px;
-  border: 1px solid #C09F80;
+  border: 1px solid #E91E63;
   border-radius: 6px;
 }
 
@@ -101,7 +101,6 @@ h2 {
 
 #noteHeader {
   color: #76323F;
-  font-family:'Permanent Marker', Cursive;
   font-size: 20px;
   text-align: center;
   padding: 10px;
@@ -144,30 +143,32 @@ h2 {
 
 #searchButton {
   padding: 10px;
-  background: #76323F;
-  border-radius: 12px;
+  background: #E91E63;
+  border-radius: 12px 50px;
   cursor: pointer;
   color: white;
 }
 
-#logOut, #addButton, .check, .delete, .buttons {
+ #addButton, .check, .delete, .buttons {
   margin: auto;
   margin-top: 10px;
   background: none;
   border: 0px;
-  color: #76323F;
+  color: #E91E63;
   font-size: 15px;
   font-weight: bold;
   cursor: pointer;
 }
-
-#logOut{
-  margin-top: 20px;
-  padding-top: 20px;
+#logOut {
+  background: none;
+  border: 0px;
+  margin-top: 10px;
+  font-family: 'Permanent Marker', Cursive;
 }
 
+
 #toDoBox {
-  border: 2px solid #C09F80;
+  border: 1px solid #E91E63;
   border-radius: 12px;
   padding: 20px;
   background-color: white;
@@ -181,7 +182,7 @@ h2 {
 }
 
 #listBox {
-  border: 2px solid #C09F80;
+  border: 1px solid #E91E63;
   border-radius: 12px;
   padding: 20px;
   background-color: white;
@@ -190,7 +191,7 @@ h2 {
 }
 
 #listHeader {
-  border-bottom: 2px dashed #76323F;
+  border-bottom: 1px dashed #76323F;
   text-align: center;
   margin: 0;
 }
@@ -229,7 +230,7 @@ li:before {
 vertical-align: top;
 margin: 25px auto;
 overflow-x: auto;
-font-family: 'Fira Sans', Sans-Serif;  
+font-family: 'OverPass', Sans-Serif;  
 height: 500px;
 }
 
@@ -242,7 +243,7 @@ height: 500px;
 
 .result-card {
   background-color: white;
-  border: solid 1px #C09F80;
+  border: solid 1px #E91E63;
   border-radius: 12px;
   margin: 5px;
 }
@@ -273,14 +274,13 @@ height: 500px;
 #calendar {
   margin-top: 20px;
   padding: 20px;
-  border: solid 1px #C09F80;
+  border: solid 1px #E91E63;
   border-radius: 12px;
-  background-color: white;
 }
 
 #scheduler {
   color: #76323F;
-  font-family:'Permanent Marker', Cursive;
+  font-family:'Overpass', Sans-Serif;
   font-size: 20px;
   text-align: center;
   padding: 10px;
@@ -292,6 +292,7 @@ height: 500px;
 }
 
 #eventName {
+  border: 1px solid #E91E63;
   border-radius: 12px ;
   background-color: white;
 }
