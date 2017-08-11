@@ -252,10 +252,6 @@ height: 500px;
   border-radius: 12px;
 }
 
-#searchTerm, #searchLocation {
-  border: 1px solid #E91E63;
-}
-
 #searchForm{
   margin-top: 20px;
   margin-bottom: 20px;

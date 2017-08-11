@@ -109,25 +109,17 @@ $('#calendar').fullCalendar({
         $('#eventName').val('');
         //submit event name
         $('#createEvent').on('submit', function(e){
-        eventId ++;
-        console.log(eventId);
         e.preventDefault();
-        
-        });
-
-// create event from user input
-  function eventHandler(){
-    $('#createEventModal').addClass('hidden');
-    let newEvent = $("#calendar").fullCalendar('renderEvent',
+        $('#createEventModal').addClass('hidden');
+        $("#calendar").fullCalendar('renderEvent',
             {
-            id: eventId,
             title: $('#eventName').val(),
-            start: new Date(start).toISOString() ,
-            end:new Date(end).toISOString(),
+            start: new Date(start).toISOString(),
+            end: new Date(end).toISOString(),
             allDay: false
         },
-        false);
-    }
+        true);
+        });  
    }
 });
 });
