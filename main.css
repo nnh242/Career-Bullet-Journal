@@ -1,11 +1,8 @@
 body#background {
-  background: url("http://res.cloudinary.com/thcloud/image/upload/e_blur:100,fl_keep_iptc,q_58/v1500437125/Job%20Journal%20Background.jpg") no-repeat 50% 50% fixed;
-  background-size: cover;
   font-family: 'Overpass', Sans-Serif;
-  font-size: 12px;
+  font-size: 16px;
 }
-
-
+/* grid system*/
 * {
     box-sizing: border-box;
 }
@@ -35,7 +32,7 @@ body#background {
 .col-3, .col-4, .col-6, .col-12 {
   width: 100%;
 }
-
+/*media query*/
 @media only screen and (min-width: 640px) {
   .col-3 {
     width: 25%;
@@ -54,65 +51,42 @@ body#background {
   }
 }
 
-body#dashboard {
-  font-family: 'Overpass', Sans-Serif;
-  font-size: 16px;
-  background-color: #FCE4EC;
-}
-
-#dash-header {
-  padding: 10 px;
-  border: 1px solid #E91E63;
-  border-radius: 6px;
-}
-
-h2 {
-  text-align: center;
-}
-
-#summary {
-  color: #76323F;
-  font-size: 20px;
-  text-align: center;
-}
-
-#description {
- color: #76323F;
- font-size: 17px;
- margin-top: 30px;
- margin-bottom: 20px;
- text-align: justify;
-}
-
-.page-header {
-
+/*index page styling starts here*/
+.indexHeader {
+  border-bottom: 1px solid white;
   font-family: 'Permanent Marker', Cursive;
-  font-size: 55px;
+  font-size: 21px;
   margin-bottom: 20px;
   text-align: center;
 }
 
 #name {
-
   font-family: 'Permanent Marker', Cursive;
-  font-size: 13px;
+  font-size: 16px;
 }
 
-#noteHeader {
-
-  font-size: 20px;
+#tag {
+  color: #76323F;
   text-align: center;
-  padding: 10px;
-  margin: 10px;
+}
+#tag span {
+  font-weight: bold;
+  color: #000;
+}
+#description {
+ color: #76323F;
+ font-size: 18px;
+ margin-bottom: 20px;
+ text-align: justify;
 }
 
 #login {
   margin: 0 auto;
   display:block;
-  vertical-align: middle;
+  text-align: center justify;
   width: 300px;
   padding: 20px;
-  border: 1px solid #C09F80;
+  border: 1px solid #000;
   border-radius: 10px;
   background: inherit;
 }
@@ -122,7 +96,7 @@ h2 {
   position:relative;
   width: 100%;
   border-radius: 6px;
-  border: 1px solid #C09F80;
+  border: 1px solid #000;
   margin-bottom: 20px;
   color: #76323F;
   padding: 10px;
@@ -134,10 +108,24 @@ h2 {
   display: inline-block;
   color: white;
   position: relative;
-  border: 1px solid #C09F80;
+  border: 1px solid #000;
   background: #76323F;
   border-radius: 6px;
   cursor: pointer;
+}
+
+/*app styling starts here*/
+body#dashboard {
+  font-family: 'Overpass', Sans-Serif;
+  font-size: 16px;
+  background-color: #FCE4EC;
+}
+
+#noteHeader {
+  font-size: 21px;
+  text-align: center;
+  padding: 10px;
+  margin: 10px;
 }
 
 #searchButton {
@@ -155,17 +143,19 @@ h2 {
   background: none;
   border: 0px;
   color: #A846A0;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: bold;
   cursor: pointer;
 }
+
 #logOut {
   background: none;
-  border: 0px;
+  border: 1px solid #E91E63;
+  border-radius: 2px;
   margin-top: 10px;
   font-family: 'Permanent Marker', Cursive;
+  cursor: pointer;
 }
-
 
 #toDoBox {
   border: 1px solid #E91E63;
@@ -212,8 +202,8 @@ h2 {
 }
 
 li {
-  padding-left: 1em;
-  text-indent: -1em;
+  padding-left: 16px;
+  text-indent: -16px;
   text-align: left;
 }
 
@@ -248,7 +238,7 @@ height: 500px;
   margin: 5px;
 }
 
-#title{
+#results #title{
   text-decoration: none;
   color:#76323F;
 }
@@ -256,18 +246,21 @@ height: 500px;
 #searchTerm, #searchLocation, #entry, #listEntry {
   padding: 10px;
   margin: 10px;
-  border: 1px solid #897C80;
+  border: 1px solid #FF4081;
   border-top: none;
   border-bottom: none;
   border-radius: 12px;
 }
 
 #searchTerm, #searchLocation {
-  width: 30%;
+  border: 1px solid #E91E63;
 }
 
 #searchForm{
-  margin: 20px auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 0;
+  margin-right: 0;
   text-align: center;
 }
 
@@ -276,14 +269,13 @@ height: 500px;
   padding: 20px;
   border: solid 1px #E91E63;
   border-radius: 12px;
-  z-index: 2;
 }
 
 #scheduler {
-
+  
   font-family:'Overpass', Sans-Serif;
-  font-size: 20px;
-  text-align: center;
+  font-size: 21px;
+  text-align: center justify;
   padding: 10px;
   margin: 10px;
 }
@@ -300,7 +292,7 @@ height: 500px;
 }
 .modal {
   position: fixed;
-  z-index: 1;
+  z-index: 4;
   padding-top: 100px;
   left: 0;
   top: 0;
@@ -315,7 +307,7 @@ height: 500px;
   border: 1px solid #E91E63;
   height: 100px;
   width: 400px;
-  z-index: 3;
+  z-index: 4;
 }
 .hidden {
   display:none;

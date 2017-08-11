@@ -97,32 +97,36 @@ $(document).ready(function (){
 	$('.list').on('click','.delete',deleteHandler);
     $('.any-list').on('click','.delete',deleteHandler);
 
-
 //implement the weekly calendar 
 $('#calendar').fullCalendar({
         schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
-    	defaultView: 'agendaWeek',
+    	defaultView: 'agendaDay',
         selectable: true,
         editable: true,
         select: function(start, end, allDay) {
+        //popup modal for user to give event a name
         $('#createEventModal').removeClass('hidden');
         $('#eventName').val('');
-        $('#createEvent').on('submit', function(event){
-        event.preventDefault();
-        eventHandler();
+        //submit event name
+        $('#createEvent').on('submit', function(e){
+        eventId ++;
+        console.log(eventId);
+        e.preventDefault();
+        
         });
 
 // create event from user input
   function eventHandler(){
     $('#createEventModal').addClass('hidden');
-    $("#calendar").fullCalendar('renderEvent',
-        {
+    let newEvent = $("#calendar").fullCalendar('renderEvent',
+            {
+            id: eventId,
             title: $('#eventName').val(),
             start: new Date(start).toISOString() ,
             end:new Date(end).toISOString(),
             allDay: false
         },
-        true);
+        false);
     }
    }
 });
