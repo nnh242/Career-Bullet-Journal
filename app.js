@@ -20,7 +20,6 @@ $(document).ready(function (){
 	$('.list').on('click','.check', checkHandler);
 	$('.list').on('click','.delete',deleteHandler);
     $('.any-list').on('click','.delete',deleteHandler);
-
 //implement the weekly calendar 
 $('#calendar').fullCalendar({
     schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
@@ -28,8 +27,9 @@ $('#calendar').fullCalendar({
     selectable: true,
     editable: true,
     select: function(start, end, allDay) {
-    //popup modal for user to give event a name
+    //popup modal for user to input event's name and see timeslot selected
     $('#createEventModal').removeClass('hidden');
+    $('#eventName').focus();
     $('#eventName').val('');
     $('#apptStartTime').val(start);
     $('#apptEndTime').val(end);
@@ -37,7 +37,6 @@ $('#calendar').fullCalendar({
 }
 });
 });
-
 // get the data from Dice API
 function getDiceApi(searchTerm, searchLocation, callback) {
     let params = {
@@ -52,7 +51,6 @@ function getDiceApi(searchTerm, searchLocation, callback) {
     }
     $.getJSON(DICE_URL, params, callback);
 }
-
 //display job posts that come from the Dice API
 function displayResults(simple) {
 	$('#results').empty();
@@ -63,15 +61,14 @@ function displayResults(simple) {
       <div class="col-12 result-card">
 	   	<div class="result-entry">
 	   		<div id="title"><a href="${items[i].detailUrl}" target="blank">${items[i].jobTitle}</a></div>
-	  		<div id="location">${items[i].location}</div>
-            <div id="company">${items[i].company}</div>  
-	 		<div id="date">${items[i].date}</div>
+	  		<div id="location"><span>Location: </span>${items[i].location}</div>
+            <div id="company"><span>Company: </span>${items[i].company}</div>  
+	 		<div id="date"><span>Date Posted: </span>${items[i].date}</div>
 	 	</div>
  	</div>
  	`)
     }
 }
-
 //add a new task to the to-do list
 function taskHandler(event){
 	event.preventDefault();
@@ -83,7 +80,6 @@ function taskHandler(event){
       `);
     $('#entry').val('');
 }
-
 //add a new list item
 function listHandler (event){
     event.preventDefault();
@@ -103,27 +99,30 @@ function deleteHandler(event){
 function checkHandler(event) {
 	$(this).closest('li').find('.task').toggleClass('task_checked');
 }
-
 //return to the landing page when user click "Close Journal"
 function logOut(){
     window.location.href="index.html";
 }
 $("#logOut").on('click', logOut);
-    
 // When user clicks on (x) close the modal
 $('.close').on('click', function () {
     $('#createEventModal').addClass('hidden');
 });
-
-$('#submitButton').on('click', function(e){
-    e.preventDefault();
-    console.log('event created');
+//submit event's name by pressing Enter key
+$('#eventName').keypress(function(event){
+    if (event.which == 13) {
+        event.preventDefault();
+        eventHandler();
+    }
+})
+//submit event's name by clicking on Save button
+$('#submitButton').on('click', function(event){
+    event.preventDefault();
+    eventHandler();
+    });  
+//render the event on the calendar
+function eventHandler() {
     $('#createEventModal').addClass('hidden');
-
-    console.log($('#apptStartTime').val());
-    console.log($('#apptEndTime').val());
-    console.log($('#apptAllDay').val());
-
     $("#calendar").fullCalendar('renderEvent',
         {
         title: $('#eventName').val(),
@@ -132,4 +131,4 @@ $('#submitButton').on('click', function(e){
         allDay: ($('#apptAllDay').val() == "true"),
     },
     true);
-    });  
+}
