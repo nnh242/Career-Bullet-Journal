@@ -28,12 +28,21 @@ $('#calendar').fullCalendar({
     editable: true,
     select: function(start, end, allDay) {
     //popup modal for user to input event's name and see timeslot selected
+    let selectedStart = start.toISOString();
+    let startTime = selectedStart.slice(11) ;
+    console.log (selectedStart);
+    let selectedEnd = end.toISOString();
+    let endTime = selectedEnd.slice(11);
+    console.log (selectedEnd);
+    let selectedTime = startTime + " " + "to" + " " + endTime;
+    console.log (selectedTime);
     $('#createEventModal').removeClass('hidden');
     $('#eventName').focus();
     $('#eventName').val('');
-    $('#apptStartTime').val(start);
-    $('#apptEndTime').val(end);
-    $('#apptAllDay').val(allDay);
+    $('#eventStartTime').val(start);
+    $('#eventEndTime').val(end);
+    $('#eventAllDay').val(allDay);
+    $('#eventTime').text(selectedTime);
 }
 });
 });
@@ -126,9 +135,9 @@ function eventHandler() {
     $("#calendar").fullCalendar('renderEvent',
         {
         title: $('#eventName').val(),
-        start: (new Date($('#apptStartTime').val())).toISOString(),
-        end:  (new Date($('#apptEndTime').val())).toISOString(),
-        allDay: ($('#apptAllDay').val() == "true"),
+        start: (new Date($('#eventStartTime').val())).toISOString(),
+        end:  (new Date($('#eventEndTime').val())).toISOString(),
+        allDay: ($('#eventAllDay').val() == "true"),
     },
     true);
 }

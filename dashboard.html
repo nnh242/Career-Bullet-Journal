@@ -72,23 +72,28 @@
     <div class="row"> 
       <div class ="col-12" id="scheduler"> Click on a timeslot to create a calendar event. You can drag and move events on calendar.  </div>
     </div>
-
+    <div class="row">
+      <div class ="col-6">
     <div id="createEventModal" class="modal hidden">
-      
       <div class="modalContent">
         <button type ="button" class="close buttons">&times;</button>
-        <div class="row">
+        <h3>Creat Event</h3>
         <form id="createEvent">
-          <label for="eventName">Event Name:</label>
+          <label for="eventName">Event's Name:</label>
           <input type="text" id="eventName">
-          <input type="hidden" id="apptStartTime"/>
-          <input type="hidden" id="apptEndTime"/>
-          <input type="hidden" id="apptAllDay" />
+          <input type="hidden" id="eventStartTime"/>
+          <input type="hidden" id="eventEndTime"/>
+          <input type="hidden" id="eventAllDay" />
           <button class="buttons" type="button" id="submitButton" >Save</button>
         </form>
+        <div id="timeSlot">
+          <label for="eventTime">Event's Time:</label>
+          <div id="eventTime"></div></span>
         </div>
       </div>
     </div>
+  </div>
+</div>
   
     <div class="row">
       <div id="calendar" class="col-12"></div>  
