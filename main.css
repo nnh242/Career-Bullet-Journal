@@ -245,7 +245,6 @@ background-color: #F8BBD0 ;
   text-align:left;
 }
 
-
 .result-card {
   background-color: white;
   border: solid 1px #880E4F;
@@ -300,12 +299,14 @@ background-color: #F8BBD0 ;
 
 #createEvent {
   display:inline-block;
-  margin-left: 40px;
+  margin-left: 30px;
 }
+
 #timeSlot {
   display:inline-block;
   margin: 0 0 10px 0px;
 }
+
 #timeSlot label {
   display: inline-block;
 }
@@ -316,7 +317,6 @@ background-color: #F8BBD0 ;
   border: 1px solid #880E4F;
   border-radius: 6px ;
   background-color: white;
-  font-size: 21px;
   max-width: 60%;
 }
 .modal {
