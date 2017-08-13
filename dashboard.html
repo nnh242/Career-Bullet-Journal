@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="main.css">
   </head>
   
-  <body id="dashboard">
+  <body id="dashboard" class="fc-selectable">
     <header id="dash-header">
       <div class="row">
         <div class="col-5" id="name">
@@ -79,17 +79,19 @@
         <button type ="button" class="close buttons">&times;</button>
         <h3>Creat Event</h3>
         <form id="createEvent">
+          <div id="timeSlot">
+            <label for="eventTime">Event's Time:</label>
+            <div id="eventTime"></div></span>
+          </div>
+          <div>
           <label for="eventName">Event's Name:</label>
           <input type="text" id="eventName">
           <input type="hidden" id="eventStartTime"/>
           <input type="hidden" id="eventEndTime"/>
           <input type="hidden" id="eventAllDay" />
           <button class="buttons" type="button" id="submitButton" >Save</button>
+          </div>
         </form>
-        <div id="timeSlot">
-          <label for="eventTime">Event's Time:</label>
-          <div id="eventTime"></div></span>
-        </div>
       </div>
     </div>
   </div>

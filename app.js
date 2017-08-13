@@ -25,6 +25,7 @@ $('#calendar').fullCalendar({
     schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
     defaultView: 'agendaDay',
     selectable: true,
+    selectLongPressDelay: 0,
     editable: true,
     select: function(start, end, allDay) {
     //popup modal for user to input event's name and see timeslot selected
@@ -34,7 +35,7 @@ $('#calendar').fullCalendar({
     let selectedEnd = end.toISOString();
     let endTime = selectedEnd.slice(11);
     console.log (selectedEnd);
-    let selectedTime = startTime + " " + "to" + " " + endTime;
+    let selectedTime = startTime + " " + "-" + " " + endTime;
     console.log (selectedTime);
     $('#createEventModal').removeClass('hidden');
     $('#eventName').focus();
@@ -43,9 +44,10 @@ $('#calendar').fullCalendar({
     $('#eventEndTime').val(end);
     $('#eventAllDay').val(allDay);
     $('#eventTime').text(selectedTime);
-}
+}  
 });
 });
+
 // get the data from Dice API
 function getDiceApi(searchTerm, searchLocation, callback) {
     let params = {
