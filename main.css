@@ -49,11 +49,22 @@
     width: 58.33%;
   }
 
-    .col-12 {
+   .col-12 {
     width: 100%;
   }
+
+  #searchTerm {
+    max-width: 600px;
+  }
+
+  #searchLocation {
+    max-width: 200px;
+  }
+
+  #searchButton {
+    max-width: 200px;
+  }
 }
-@media only screen and ()
 
 /*index page styling starts here*/
 body#background {
@@ -130,7 +141,6 @@ body#dashboard {
   margin-right: auto;
   text-align: center;
   max-width: 1000px;
-  width: 100%;
 }
 
 #searchTerm, #searchLocation, #entry, #listEntry {
@@ -138,30 +148,27 @@ body#dashboard {
   margin: 10px;
   border: 1px solid #3F51B5;
   border-radius: 12px;
-  font-size: 21px;
 }
 
 #searchTerm {
   display:inline-block;
-  width: 50%;
-  max-width: 100%;
+  width: 300px;
 }
 
 #searchLocation {
   display: inline-block;
-  width: 20%;
-  max-width: 100%;
+  width: 300px;
 }
 
 #searchButton {
   display: inline-block;
-  width: 15%;
   padding: 10px;
   background: #3F51B5;
   border-radius: 12px;
   cursor: pointer;
   color: white;
   font-size: 16px;
+  width: 300px;
 }
 
 .hidden {
@@ -210,7 +217,6 @@ body#dashboard {
 #toDoHeader {
   border-bottom: 1px dashed #3F51B5;
   text-align: center;
-  font-size: 21px;
 }
 
 #listBox {
@@ -227,7 +233,6 @@ body#dashboard {
   border-bottom: 1px dashed #3F51B5;
   text-align: center;
   margin: 0;
-  font-size: 21px;
 }
 
 #entry, #listEntry {

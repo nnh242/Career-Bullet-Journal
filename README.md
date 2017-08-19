@@ -2,7 +2,7 @@
 This is a bullet journal created for job searching, API-hack from job search APIs such as dice and github jobs.
 The idea of the bullet journal is to quickly note down and organize any process with ease. The purpose of this API project is to help users get the job search done in an organized way.
 
-The landing page provides a cover for the journal providing users with a simple introudction to the features of the app, this app is where users can search for jobs, get things done and stay organized. Users can open the journal with a simple but insipiring provided passcode.
+The landing page provides a cover for the journal providing users with a simple introudction to the features of the app, this app is where users can search for jobs, get things done and stay organized. 
 
 ![ScreenShot]
 
