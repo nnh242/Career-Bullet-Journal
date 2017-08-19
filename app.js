@@ -1,7 +1,9 @@
 const DICE_URL = "http://service.dice.com/api/rest/jobsearch/v1/simple.json?"
 
-
 $(document).ready(function (){
+    $('#open').on('click', function (){
+        window.location="dashboard.html";
+    })
     let rawDate = new Date();
     let stringDate = rawDate.toString();
     let displayDate= stringDate.slice(-57,-42);
@@ -31,12 +33,9 @@ $('#calendar').fullCalendar({
     //popup modal for user to input event's name and see timeslot selected
     let selectedStart = start.toISOString();
     let startTime = selectedStart.slice(11) ;
-    console.log (selectedStart);
     let selectedEnd = end.toISOString();
     let endTime = selectedEnd.slice(11);
-    console.log (selectedEnd);
     let selectedTime = startTime + " " + "-" + " " + endTime;
-    console.log (selectedTime);
     $('#createEventModal').removeClass('hidden');
     $('#eventName').focus();
     $('#eventName').val('');

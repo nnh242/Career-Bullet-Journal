@@ -56,34 +56,31 @@
 
 /*index page styling starts here*/
 body#background {
-  font-family: 'Overpass', Sans-Serif;
+  font-family: 'Roboto Condensed', Sans-Serif;
   font-size: 16px;
-  background-color: #FCE4EC;
+  background-color: #ffffff;
 }
+
 .indexHeader {
-  border-bottom: 1px solid #880E4F;
-  font-family: 'Permanent Marker', Cursive;
+  border-bottom: 1px solid #000;
   font-size: 21px;
   margin-bottom: 20px;
   text-align: center;
-}
-
-#name {
-  font-family: 'Permanent Marker', Cursive;
-  font-size: 16px;
+  color: #1A237E;
 }
 
 #tag {
-  color: #880E4F;
   text-align: center;
 }
-#tag span {
+
+#tag span, #brand {
   font-weight: bold;
-  color: #000;
+  color: #3F51B5;
 }
+
 #description {
- color: #880E4F;
- font-size: 18px;
+ font-family: 'Cabin', Sans-Serif;
+ font-size: 16px;
  text-align: justify;
 }
 
@@ -97,20 +94,7 @@ body#background {
   background: inherit;
 }
 
-#password {
-  display: inline-block;
-  width: 80%;
-  max-width: 100%;
-  position:relative;
-  left: 40px;
-  border-radius: 6px;
-  border: 1px solid #000;
-  margin-bottom: 20px;
-  color: #880E4F;
-  padding: 10px;
-}
-
-#submit {
+#open {
   padding: 10px;
   width: 80%;
   max-width: 100%;
@@ -119,16 +103,16 @@ body#background {
   position: relative;
   left: 40px;
   border: 1px solid #000;
-  background: #880E4F;
+  background: #3F51B5;
   border-radius: 6px;
   cursor: pointer;
 }
 
 /*app styling starts here*/
 body#dashboard {
-  font-family: 'Overpass', Sans-Serif;
+  font-family: 'Cabin', Sans-Serif;
   font-size: 16px;
-  background-color: #FCE4EC;
+  background-color: #ffffff;
 }
 
 #noteHeader {
@@ -136,12 +120,13 @@ body#dashboard {
   text-align: center;
   padding: 10px;
   margin: 10px;
+
 }
 
 #searchButton {
   display: inline-block;
   padding: 10px;
-  background: #880E4F;
+  background: #3F51B5;
   border-radius: 50px 12px;
   cursor: pointer;
   color: white;
@@ -154,7 +139,7 @@ body#dashboard {
   margin-top: 10px;
   background: none;
   border: 0px;
-  color: #880E4F;
+  color: #1A237E;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
@@ -162,39 +147,42 @@ body#dashboard {
 
 #logOut {
   background: none;
-  background-color: #F8BBD0;
+  background-color: #3F51B5;
+  color: white; 
   border-radius: 12px;
   margin-top: 10px;
-  font-family: 'Permanent Marker', Cursive;
+  font-family: 'Roboto Condensed', Sans-Serif;
   font-size: 13px;
   cursor: pointer;
 }
 
 #toDoBox {
-  border: 1px solid #880E4F;
+  border: 1px solid #3F51B5;
   border-radius: 12px;
   padding: 20px;
-  background-color: #F8BBD0;
   height: 300px;
   margin-bottom: 10px;
+  overflow-y: auto;
+  background-color: #FFFDE7;
 }
 
 #toDoHeader {
-  border-bottom: 1px dashed #880E4F;
+  border-bottom: 1px dashed #3F51B5;
   text-align: center;
 }
 
 #listBox {
-  border: 1px solid #880E4F;
+  border: 1px solid #3F51B5;
   border-radius: 12px;
   padding: 20px;
-  background-color: #F8BBD0;
   height: 300px;
   margin-bottom: 10px;
+  overflow-y: auto;
+  background-color: #FFFDE7;
 }
 
 #listHeader {
-  border-bottom: 1px dashed #880E4F;
+  border-bottom: 1px dashed #3F51B5;
   text-align: center;
   margin: 0;
 }
@@ -236,7 +224,6 @@ border-radius: 12px;
 overflow-x: auto;
 font-family: 'OverPass', Sans-Serif;  
 height: 500px;
-background-color: #F8BBD0 ;
 }
 
 .result-entry {
@@ -247,7 +234,7 @@ background-color: #F8BBD0 ;
 
 .result-card {
   background-color: white;
-  border: solid 1px #880E4F;
+  border: solid 1px #3F51B5;
   border-radius: 12px;
   margin: 5px;
 }
@@ -257,6 +244,7 @@ background-color: #F8BBD0 ;
 }
 
 .result-card #company {
+  background-color: 
   font-weight: bold;
 }
 
@@ -267,7 +255,7 @@ background-color: #F8BBD0 ;
 #searchTerm, #searchLocation, #entry, #listEntry {
   padding: 10px;
   margin: 10px;
-  border: 1px solid #880E4F;
+  border: 1px solid #3F51B5;
   border-radius: 12px;
 }
 
@@ -284,8 +272,7 @@ background-color: #F8BBD0 ;
   margin-top: 20px;
   padding: 20px;
   border-radius: 12px;
-  border: solid 1px #880E4F;
-  background-color: #F8BBD0;
+  border: solid 1px #3F51B5;
   z-index: 3;
 }
 
@@ -314,7 +301,7 @@ background-color: #F8BBD0 ;
   display:inline-block;
 }
 #eventName {
-  border: 1px solid #880E4F;
+  border: 1px solid #3F51B5;
   border-radius: 6px ;
   background-color: white;
   max-width: 60%;
@@ -338,7 +325,7 @@ background-color: #F8BBD0 ;
   display:block;
   background-color: white;
   margin: auto;
-  border: 1px solid #880E4F;
+  border: 1px solid #3F51B5;
   border-radius: 12px;
   z-index: 4;
   margin-top: 10px;
