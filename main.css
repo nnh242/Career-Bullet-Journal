@@ -53,6 +53,7 @@
     width: 100%;
   }
 }
+@media only screen and ()
 
 /*index page styling starts here*/
 body#background {
@@ -84,16 +85,6 @@ body#background {
  text-align: justify;
 }
 
-#login {
-  margin: 0 auto;
-  display:block;
-  text-align: center justify;
-  padding: 20px;
-  border: 1px solid #000;
-  border-radius: 10px;
-  background: inherit;
-}
-
 #open {
   padding: 10px;
   width: 80%;
@@ -106,6 +97,7 @@ body#background {
   background: #3F51B5;
   border-radius: 6px;
   cursor: pointer;
+  font-size: 17px;
 }
 
 /*app styling starts here*/
@@ -115,45 +107,94 @@ body#dashboard {
   background-color: #ffffff;
 }
 
-#noteHeader {
-  font-size: 21px;
-  text-align: center;
-  padding: 10px;
-  margin: 10px;
-
-}
-
-#searchButton {
-  display: inline-block;
-  padding: 10px;
-  background: #3F51B5;
-  border-radius: 50px 12px;
-  cursor: pointer;
-  color: white;
-  font-family: 'Overpass', Sans-Serif;
-  font-size: 16px;
-}
-
- #addButton, .check, .delete, .buttons {
-  margin: auto;
-  margin-top: 10px;
-  background: none;
-  border: 0px;
-  color: #1A237E;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-#logOut {
+#logo {
+  display: block;
+  margin: 0 auto;
   background: none;
   background-color: #3F51B5;
   color: white; 
   border-radius: 12px;
-  margin-top: 10px;
+  margin: 0 auto;
   font-family: 'Roboto Condensed', Sans-Serif;
   font-size: 13px;
   cursor: pointer;
+  max-width: 100%;
+  text-align: center;
+}
+
+#searchForm{
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  max-width: 1000px;
+  width: 100%;
+}
+
+#searchTerm, #searchLocation, #entry, #listEntry {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #3F51B5;
+  border-radius: 12px;
+  font-size: 21px;
+}
+
+#searchTerm {
+  display:inline-block;
+  width: 50%;
+  max-width: 100%;
+}
+
+#searchLocation {
+  display: inline-block;
+  width: 20%;
+  max-width: 100%;
+}
+
+#searchButton {
+  display: inline-block;
+  width: 15%;
+  padding: 10px;
+  background: #3F51B5;
+  border-radius: 12px;
+  cursor: pointer;
+  color: white;
+  font-size: 16px;
+}
+
+.hidden {
+  display:none;
+}
+
+#results {
+  vertical-align: top;
+  margin: 25px auto;
+  border-radius: 12px;
+  overflow-x: auto;
+  font-family: 'OverPass', Sans-Serif;  
+  height: 500px;
+  }
+  
+.result-entry {
+    padding: 10px;
+    margin: auto;
+    text-align:left;
+}
+  
+.result-card {
+    background-color: white;
+    border: solid 1px #3F51B5;
+    border-radius: 12px;
+    margin: 5px;
+}
+
+ #noteHeader {
+    font-size: 21px;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
 }
 
 #toDoBox {
@@ -169,6 +210,7 @@ body#dashboard {
 #toDoHeader {
   border-bottom: 1px dashed #3F51B5;
   text-align: center;
+  font-size: 21px;
 }
 
 #listBox {
@@ -185,11 +227,23 @@ body#dashboard {
   border-bottom: 1px dashed #3F51B5;
   text-align: center;
   margin: 0;
+  font-size: 21px;
 }
 
 #entry, #listEntry {
   width: 60%;
   margin: 10px;
+}
+
+#addButton, .check, .delete, .buttons {
+  margin: auto;
+  margin-top: 10px;
+  background: none;
+  border: 0px;
+  color: #1A237E;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .task_checked {
@@ -213,59 +267,11 @@ li:before {
   padding-right: 5px;
 }
 
-.hidden {
-  display:none;
-}
-
-#results {
-vertical-align: top;
-margin: 25px auto;
-border-radius: 12px;
-overflow-x: auto;
-font-family: 'OverPass', Sans-Serif;  
-height: 500px;
-}
-
-.result-entry {
-  padding: 10px;
-  margin: auto;
-  text-align:left;
-}
-
-.result-card {
-  background-color: white;
-  border: solid 1px #3F51B5;
-  border-radius: 12px;
-  margin: 5px;
-}
-
-.result-card #title {
-  font-size: 18px;
-}
-
-.result-card #company {
-  background-color: 
-  font-weight: bold;
-}
-
-#searchArea {
-  display: inline-block;
-}
-
-#searchTerm, #searchLocation, #entry, #listEntry {
+#calendarHeader {
+  font-size: 21px;
+  text-align: center;
   padding: 10px;
   margin: 10px;
-  border: 1px solid #3F51B5;
-  border-radius: 12px;
-}
-
-#searchForm{
-  display: inline-block;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: 0;
-  margin-right: 0;
-  text-align: center;
 }
 
 #calendar {
@@ -274,14 +280,6 @@ height: 500px;
   border-radius: 12px;
   border: solid 1px #3F51B5;
   z-index: 3;
-}
-
-#scheduler {
-  font-family:'Overpass', Sans-Serif;
-  font-size: 21px;
-  text-align: center justify;
-  padding: 10px;
-  margin: 10px;
 }
 
 #createEvent {

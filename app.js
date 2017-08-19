@@ -37,7 +37,6 @@ $('#calendar').fullCalendar({
     let endTime = selectedEnd.slice(11);
     let selectedTime = startTime + " " + "-" + " " + endTime;
     $('#createEventModal').removeClass('hidden');
-    $('#eventName').focus();
     $('#eventName').val('');
     $('#eventStartTime').val(start);
     $('#eventEndTime').val(end);
@@ -113,7 +112,7 @@ function checkHandler(event) {
 function logOut(){
     window.location.href="index.html";
 }
-$("#logOut").on('click', logOut);
+$("#logo").on('click', logOut);
 // When user clicks on (x) close the modal
 $('.close').on('click', function () {
     $('#createEventModal').addClass('hidden');
