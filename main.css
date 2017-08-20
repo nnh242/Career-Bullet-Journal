@@ -101,7 +101,7 @@ body#background {
   width: 80%;
   max-width: 100%;
   display: inline-block;
-  color: white;
+  color: #ffffff;
   position: relative;
   left: 40px;
   border: 1px solid #000;
@@ -123,7 +123,7 @@ body#dashboard {
   margin: 0 auto;
   background: none;
   background-color: #3F51B5;
-  color: white; 
+  color: #ffffff; 
   border-radius: 12px;
   margin: 0 auto;
   font-family: 'Roboto Condensed', Sans-Serif;
@@ -166,7 +166,7 @@ body#dashboard {
   background: #3F51B5;
   border-radius: 12px;
   cursor: pointer;
-  color: white;
+  color: #ffffff;
   font-size: 16px;
   width: 300px;
 }
@@ -179,10 +179,14 @@ body#dashboard {
   vertical-align: top;
   margin: 25px auto;
   border-radius: 12px;
-  overflow-x: auto;
-  font-family: 'OverPass', Sans-Serif;  
+  overflow-x: auto;  
   height: 500px;
-  }
+  background-color: #FFFDE7;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border: solid 1px #3F51B5;
+  border-radius: 12px;  
+}
   
 .result-entry {
     padding: 10px;
@@ -191,10 +195,10 @@ body#dashboard {
 }
   
 .result-card {
-    background-color: white;
+    background-color: #ffffff;
     border: solid 1px #3F51B5;
     border-radius: 12px;
-    margin: 5px;
+    margin-bottom: 5px;
 }
 
  #noteHeader {
@@ -306,7 +310,7 @@ li:before {
 #eventName {
   border: 1px solid #3F51B5;
   border-radius: 6px ;
-  background-color: white;
+  background-color: #ffffff;
   max-width: 60%;
 }
 .modal {
@@ -326,7 +330,7 @@ li:before {
   height: 160px;
   max-height: 100%;
   display:block;
-  background-color: white;
+  background-color: #ffffff;
   margin: auto;
   border: 1px solid #3F51B5;
   border-radius: 12px;

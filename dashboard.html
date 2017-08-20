@@ -17,8 +17,8 @@
     </header>
     <main>
     <form id="searchForm">
-      <input type="text" id="searchTerm" placeholder="jobs or skills" name ="search" autofocus/> 
-      <input type="text" id="searchLocation" placeholder="zipcode" name ="search"/>
+      <input type="text" id="searchTerm" placeholder="job title or skill" name ="search" autofocus/> 
+      <input type="text" id="searchLocation" placeholder="city or zipcode" name ="search"/>
       <button type="submit" id="searchButton">Find Jobs</button>
     </form>
     <div class="row">
@@ -42,7 +42,7 @@
         </div>   
         <ul class="list">
           <li>
-            <span class="task">Prepare for interview</span><button onclick="checkHandler()" class="check">check</button><button onclick ="deleteHandler()" class="delete">delete</button>
+            <span class="task">Learn Node</span><button onclick="checkHandler()" class="check">check</button><button onclick ="deleteHandler()" class="delete">delete</button>
           </li>
         </ul>
       </div>
@@ -57,21 +57,21 @@
         </div>   
         <ul class="any-list">
           <li>
-            <span class="item"> write reusuable code</span><button onclick ="deleteHandler()" class="delete">delete</button>
+            <span class="item"> No Pink</span><button onclick ="deleteHandler()" class="delete">delete</button>
           </li>
         </ul>
       </div>
     </div>  
 
     <div class="row"> 
-      <div class ="col-12" id="calendarHeader"> Click on a timeslot to create a calendar event. </div>
+      <div class ="col-12" id="calendarHeader"> Click or drag on timeslots to create a calendar event. </div>
     </div>
     <div class="row">
       <div class ="col-6">
     <div id="createEventModal" class="modal hidden">
       <div class="modalContent">
         <button type ="button" class="close buttons">&times;</button>
-        <h3>Creat Event</h3>
+        <h3>Create Event</h3>
         <form id="createEvent">
           <div id="timeSlot">
             <label for="eventTime">Event's Time:</label>
