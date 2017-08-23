@@ -1,7 +1,7 @@
 const DICE_URL = "http://service.dice.com/api/rest/jobsearch/v1/simple.json?"
 
-$(document).ready(function (){
-    $('#open').on('click', function (){
+$(document).ready( () => {
+    $('#open').on('click', () => {
         window.location="dashboard.html";
     })
     let rawDate = new Date();
@@ -10,7 +10,7 @@ $(document).ready(function (){
     $("#today").text(displayDate);
     
     // listen for user's search input
-    $('#searchForm').submit(function(event) {
+    $('#searchForm').submit(function (event){
         event.preventDefault();
         let searchTerm= $(this).find('input[id="searchTerm"]').val().trim();
         let searchLocation =$(this).find('input[id="searchLocation"]').val().trim();
@@ -29,7 +29,7 @@ $('#calendar').fullCalendar({
     selectable: true,
     selectLongPressDelay: 0,
     editable: true,
-    select: function(start, end, allDay) {
+    select: (start, end, allDay) => {
     //popup modal for user to input event's name and see timeslot selected
     let selectedStart = start.toISOString();
     let startTime = selectedStart.slice(11) ;
@@ -81,24 +81,34 @@ function displayResults(simple) {
 //add a new task to the to-do list
 function taskHandler(event){
 	event.preventDefault();
-	let newTask = $("#entry").val();
-    $('.list').append(
-		`<li>
-          <span class="task">${newTask}</span><button onclick="checkHandler()" class="check">check</button><button onclick ="deleteHandler()" class="delete">delete</button>      
-        </li>
-      `);
-    $('#entry').val('');
+    let newTask = $("#entry").val();
+    if (newTask==="") {
+        $('#entry').notify("Please enter a task", { position:"top" })
+    }
+    else {
+        $('.list').append(
+            `<li>
+              <span class="task">${newTask}</span><button onclick="checkHandler()" class="check">check</button><button onclick ="deleteHandler()" class="delete">delete</button>      
+            </li>
+          `);
+        $('#entry').val('');
+    }
 }
 //add a new list item
 function listHandler (event){
     event.preventDefault();
     let newEntry = $("#listEntry").val();
-    $('.any-list').append(
-        `<li>
-          <span class="task">${newEntry}</span><button onclick ="deleteHandler()" class="delete">delete</button>     
-        </li>
-      `);
-    $('#listEntry').val('');
+    if (newEntry==="") {
+        $('#listEntry').notify("Please enter list's item", { position:"top" })
+    }
+    else {
+        $('.any-list').append(
+            `<li>
+              <span class="task">${newEntry}</span><button onclick ="deleteHandler()" class="delete">delete</button>     
+            </li>
+          `);
+        $('#listEntry').val('');
+    }
 }
 // delete a task or list item
 function deleteHandler(event){
@@ -108,7 +118,7 @@ function deleteHandler(event){
 function checkHandler(event) {
 	$(this).closest('li').find('.task').toggleClass('task_checked');
 }
-//return to the landing page when user click "Close Journal"
+//return to the landing page when user click logo
 function logOut(){
     window.location.href="index.html";
 }
@@ -118,14 +128,14 @@ $('.close').on('click', function () {
     $('#createEventModal').addClass('hidden');
 });
 //submit event's name by pressing Enter key
-$('#eventName').keypress(function(event){
+$('#eventName').keypress((event) => {
     if (event.which == 13) {
         event.preventDefault();
         eventHandler();
     }
 })
 //submit event's name by clicking on Save button
-$('#submitButton').on('click', function(event){
+$('#submitButton').on('click', (event) => {
     event.preventDefault();
     eventHandler();
     });  
