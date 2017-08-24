@@ -119,18 +119,11 @@ body#dashboard {
 }
 
 #logo {
-  display: block;
-  margin: 0 auto;
-  background: none;
-  background-color: #3F51B5;
-  color: #ffffff; 
-  border-radius: 12px;
-  margin: 0 auto;
+  color: #3F51B5; 
   font-family: 'Roboto Condensed', Sans-Serif;
-  font-size: 13px;
   cursor: pointer;
-  max-width: 100%;
   text-align: center;
+  font-size: 21px;
 }
 
 #searchForm{
