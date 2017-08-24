@@ -4,7 +4,7 @@ The idea of the bullet journal is to quickly note down and organize any process 
 
 The landing page provides a cover for the journal providing users with a simple introudction to the features of the app, this app is where users can search for jobs, get things done and stay organized. 
 
-![ScreenShot]
+![ScreenShot](https://github.com/nnh242/Career-Bullet-Journal/blob/master/landing.JPG)
 
 The Career Bullet Journal has three main features: Job Search, Notes and Calendar
 ![ScreenShot]
