@@ -1,4 +1,4 @@
-const DICE_URL = "http://service.dice.com/api/rest/jobsearch/v1/simple.json?"
+const API_URL = "https://jobs.github.com/positions.json?"
 
 $(document).ready( () => {
     $('#open').on('click', () => {
@@ -15,7 +15,7 @@ $(document).ready( () => {
         let searchTerm= $(this).find('input[id="searchTerm"]').val().trim();
         let searchLocation =$(this).find('input[id="searchLocation"]').val().trim();
         $('#results').removeClass('hidden');
-        getDiceApi(searchTerm, searchLocation, displayResults);
+        getApi(searchTerm, searchLocation, displayResults);
     });
 	$('#toDoForm').submit(taskHandler);
     $('#listForm').submit(listHandler);
@@ -46,21 +46,17 @@ $('#calendar').fullCalendar({
 });
 });
 
-// get the data from Dice API
-function getDiceApi(searchTerm, searchLocation, callback) {
+// get the data from API
+function getApi(searchTerm, searchLocation, callback) {
     let params = {
-        "text": searchTerm,
-        "city": searchLocation,
-        "direct": 1,
-        "skill": searchTerm,
-        "sort": 1,
-        "sd": "a",
+        "description": searchTerm,
+        "location": searchLocation,
     	type:"get",
         maxResults: 50
     }
-    $.getJSON(DICE_URL, params, callback);
+    $.getJSON(API_URL, params, callback);
 }
-//display job posts that come from the Dice API
+//display job posts that come from the API
 function displayResults(simple) {
 	$('#results').empty();
     let items = simple.resultItemList;
@@ -69,10 +65,11 @@ function displayResults(simple) {
    	<div class="row">
       <div class="col-12 result-card">
 	   	<div class="result-entry">
-	   		<div id="title"><a href="${items[i].detailUrl}" target="blank">${items[i].jobTitle}</a></div>
+	   		<div id="title"><a href="${items[i].url}" target="blank">${items[i].title}</a></div>
 	  		<div id="location"><span>Location: </span>${items[i].location}</div>
-            <div id="company"><span>Company: </span>${items[i].company}</div>  
-	 		<div id="date"><span>Date Posted: </span>${items[i].date}</div>
+            <div id="company"><span>Company: </span>${items[i].company}</div>
+            <div id="date"><span>Date Posted: </span>${items[i].date}</div>  
+	 		<div id="date"><span> Description: </span>${items[i].description}</div>
 	 	</div>
  	</div>
  	`)
