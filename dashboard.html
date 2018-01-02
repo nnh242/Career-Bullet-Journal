@@ -11,14 +11,14 @@
     <link rel="stylesheet" href='scheduler.min.css'>
     <link rel="stylesheet" href="main.css">
   </head>
-  
+
   <body id="dashboard" class="fc-selectable">
     <header role="banner" id="dash-header">
           <h1 id="logo">Career Bullet Journal</h1>
     </header>
     <main>
     <form id="searchForm">
-      <input type="text" id="searchTerm" placeholder="job title or skill" name ="search" autofocus/> 
+      <input type="text" id="searchTerm" placeholder="job title or skill" name ="search" autofocus/>
       <input type="text" id="searchLocation" placeholder="city or zipcode" name ="search"/>
       <button type="submit" id="searchButton">Find Jobs</button>
     </form>
@@ -28,19 +28,19 @@
       </div>
     </div>
 
-    <div class="row"> 
+    <div class="row">
       <div class ="col-12" id="noteHeader"> Notes for <span id="today"></span> </div>
     </div>
 
     <div class ="row">
       <div class="col-6">
-        <div id="toDoBox">     
+        <div id="toDoBox">
         <div id="toDoHeader">
           <form id="toDoForm">
             <input type="text" name="task-entry" id="entry" placeholder="Tasks"/>
             <button type="submit" id="addButton">Add</button>
           </form>
-        </div>   
+        </div>
         <ul class="list">
           <li>
             <span class="task">Learn Node</span><button onclick="checkHandler()" class="check">check</button><button onclick ="deleteHandler()" class="delete">delete</button>
@@ -49,22 +49,22 @@
       </div>
       </div>
       <div class="col-6">
-        <div id="listBox">     
+        <div id="listBox">
         <div id="listHeader">
           <form id="listForm">
             <input type="text" name="list-entry" id="listEntry" placeholder="Any Lists"/>
             <button type="submit" id="addButton">Add</button>
           </form>
-        </div>   
+        </div>
         <ul class="any-list">
           <li>
             <span class="item"> No Pink</span><button onclick ="deleteHandler()" class="delete">delete</button>
           </li>
         </ul>
       </div>
-    </div>  
+    </div>
 
-    <div class="row"> 
+    <div class="row">
       <div class ="col-12" id="calendarHeader"> Click or drag on timeslots to create a calendar event. </div>
     </div>
     <div class="row">
@@ -91,9 +91,9 @@
     </div>
   </div>
 </div>
-  
+
     <div class="row">
-      <div id="calendar" class="col-12"></div>  
+      <div id="calendar" class="col-12"></div>
     </div>
 
   </main>

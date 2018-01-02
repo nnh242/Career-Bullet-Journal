@@ -1,0 +1,30 @@
+{
+  "name": "career-bullet-journal",
+  "version": "1.0.0",
+  "description": "api",
+  "main": "app.js",
+  "scripts": {
+    "start":"nodemon server.js",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nnh242/Career-Bullet-Journal.git"
+  },
+  "keywords": [
+    "career-journal"
+  ],
+  "author": "Tina Hoang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nnh242/Career-Bullet-Journal/issues"
+  },
+  "homepage": "https://github.com/nnh242/Career-Bullet-Journal#readme",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.14.6"
+  }
+}
