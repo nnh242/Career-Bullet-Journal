@@ -13,21 +13,12 @@ app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
-<<<<<<< HEAD
 
 app.use(express.static('public'));
 
-//const https = require("https");
 const url =
   "https://jobs.github.com/positions.json?";
-// axios.get(url)
-//   .then(res =>{
-//     console.log(res.data[0]);
-//   })
-//   .catch(err => {
-//     console.log(err);
-//   })
-//
+
 app.get('/api/positions', (req,res)=>{
   axios.get(url)
       .then(api => {
