@@ -13,6 +13,7 @@ app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
+<<<<<<< HEAD
 
 app.use(express.static('public'));
 
@@ -37,7 +38,23 @@ app.get('/api/positions', (req,res)=>{
         res.status(500).json(err);
       })
 });
+=======
+//get the remote API and serve to front-end
+const url =
+  "https://jobs.github.com/positions.json?";
+>>>>>>> 9cf3bcab2876f4f91636127f7b14fa0eb77bb09b
 
+app.get(url,(req,res)=>{
+  axios
+  .get(url)
+  .then(res => {
+    console.log(res);
+    );
+  })
+  .catch(error => {
+    console.log(error);
+  });
+}
 app.listen(process.env.PORT || 8080, () => {
     console.log(`Your app is listening on port ${process.env.PORT || 8080}`);
 });
