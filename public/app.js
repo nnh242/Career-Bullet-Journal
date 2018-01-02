@@ -1,4 +1,4 @@
-const API_URL = "https://jobs.github.com/positions.json?"
+const API_URL = "/api/positions"
 
 $(document).ready( () => {
     $('#open').on('click', () => {
@@ -8,7 +8,7 @@ $(document).ready( () => {
     let stringDate = rawDate.toString();
     let displayDate= stringDate.slice(-57,-42);
     $("#today").text(displayDate);
-    
+
     // listen for user's search input
     $('#searchForm').submit(function (event){
         event.preventDefault();
@@ -22,7 +22,7 @@ $(document).ready( () => {
 	$('.list').on('click','.check', checkHandler);
 	$('.list').on('click','.delete',deleteHandler);
     $('.any-list').on('click','.delete',deleteHandler);
-//implement the weekly calendar 
+//implement the weekly calendar
 $('#calendar').fullCalendar({
     schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
     defaultView: 'agendaDay',
@@ -42,7 +42,7 @@ $('#calendar').fullCalendar({
     $('#eventEndTime').val(end);
     $('#eventAllDay').val(allDay);
     $('#eventTime').text(selectedTime);
-}  
+}
 });
 });
 
@@ -57,9 +57,10 @@ function getApi(searchTerm, searchLocation, callback) {
     $.getJSON(API_URL, params, callback);
 }
 //display job posts that come from the API
-function displayResults(simple) {
+function displayResults(data) {
+  console.log(data);
 	$('#results').empty();
-    let items = simple.resultItemList;
+    let items = data;
     for (let i=0; i<items.length; i++){
    $('#results').append(`
    	<div class="row">
@@ -68,7 +69,7 @@ function displayResults(simple) {
 	   		<div id="title"><a href="${items[i].url}" target="blank">${items[i].title}</a></div>
 	  		<div id="location"><span>Location: </span>${items[i].location}</div>
             <div id="company"><span>Company: </span>${items[i].company}</div>
-            <div id="date"><span>Date Posted: </span>${items[i].date}</div>  
+            <div id="date"><span>Date Posted: </span>${items[i].date}</div>
 	 		<div id="date"><span> Description: </span>${items[i].description}</div>
 	 	</div>
  	</div>
@@ -85,7 +86,7 @@ function taskHandler(event){
     else {
         $('.list').append(
             `<li>
-              <span class="task">${newTask}</span><button onclick="checkHandler()" class="check">check</button><button onclick ="deleteHandler()" class="delete">delete</button>      
+              <span class="task">${newTask}</span><button onclick="checkHandler()" class="check">check</button><button onclick ="deleteHandler()" class="delete">delete</button>
             </li>
           `);
         $('#entry').val('');
@@ -101,7 +102,7 @@ function listHandler (event){
     else {
         $('.any-list').append(
             `<li>
-              <span class="task">${newEntry}</span><button onclick ="deleteHandler()" class="delete">delete</button>     
+              <span class="task">${newEntry}</span><button onclick ="deleteHandler()" class="delete">delete</button>
             </li>
           `);
         $('#listEntry').val('');
@@ -135,7 +136,7 @@ $('#eventName').keypress((event) => {
 $('#submitButton').on('click', (event) => {
     event.preventDefault();
     eventHandler();
-    });  
+    });
 //render the event on the calendar
 function eventHandler() {
     $('#createEventModal').addClass('hidden');

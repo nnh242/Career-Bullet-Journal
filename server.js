@@ -1,7 +1,10 @@
 const express = require('express');
 const morgan = require('morgan');
 const app = express();
-
+const bodyParser = require('body-parser');
+const jsonParser = bodyParser.json();
+const axios = require("axios");
+app.use(jsonParser);
 app.use(morgan('common'));
 
 //CORS
@@ -11,18 +14,28 @@ app.use(function(req, res, next) {
     next();
 });
 
-const https = require("https");
+app.use(express.static('public'));
+
+//const https = require("https");
 const url =
   "https://jobs.github.com/positions.json?";
-https.get(url, res => {
-  res.setEncoding("utf8");
-  let body = "";
-  res.on("data", data => {
-    body += data;
-  });
-  res.on("end", () => {
-    body = JSON.parse(body);
-  });
+// axios.get(url)
+//   .then(res =>{
+//     console.log(res.data[0]);
+//   })
+//   .catch(err => {
+//     console.log(err);
+//   })
+//
+app.get('/api/positions', (req,res)=>{
+  axios.get(url)
+      .then(api => {
+      res.status(200).json(api.data)
+      })
+      .catch(err =>{
+        console.log(err,'in get request to api');
+        res.status(500).json(err);
+      })
 });
 
 app.listen(process.env.PORT || 8080, () => {
