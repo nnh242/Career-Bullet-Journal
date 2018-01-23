@@ -2,7 +2,7 @@ const API_URL = "/api/positions"
 
 $(document).ready( () => {
     $('#open').on('click', () => {
-        window.location="dashboard.html";
+        window.location.href="/dashboard";
     })
     let rawDate = new Date();
     let stringDate = rawDate.toString();
