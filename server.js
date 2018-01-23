@@ -15,7 +15,9 @@ app.use(function(req, res, next) {
 });
 
 app.use(express.static('public'));
-
+app.get('/dashboard', (req,res) => {
+    res.sendFile(__dirname + '/public/dashboard.html');
+}
 const url =
   "https://jobs.github.com/positions.json?";
 
