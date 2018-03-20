@@ -13,8 +13,8 @@ The Career Bullet Journal has three main features: Job Search, Notes and Calenda
 <p align="center">
   <img src="https://github.com/nnh242/Career-Bullet-Journal/blob/master/public/mobile1.JPG">
   <img src="https://github.com/nnh242/Career-Bullet-Journal/blob/master/public/mobile2.JPG">
-  <img src="https://github.com/nnh242/Career-Bullet-Journal/blob/master/public/mobile3.JPG">
-  <img src="https://github.com/nnh242/Career-Bullet-Journal/blob/master/public/mobile4.JPG">
+  <img width="400px" src="https://github.com/nnh242/Career-Bullet-Journal/blob/master/public/mobile3.JPG">
+  <img width="400px" src="https://github.com/nnh242/Career-Bullet-Journal/blob/master/public/mobile4.JPG">
 </p>
 The Notes feature consists of two simple bullet-point-style note-cards where users can create a to-do list and a list of anything. This is the main idea of a bullet journal where users can make any random list to organize the job search process. Examples: Skills list, Deal breaker list, dream company list, etc.
 <p align="center"> 
