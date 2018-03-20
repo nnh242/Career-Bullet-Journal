@@ -12,9 +12,9 @@ The Career Bullet Journal has three main features: Job Search, Notes and Calenda
 </p>
 <p align="center">
   <img src="https://github.com/nnh242/Career-Bullet-Journal/blob/master/public/mobile1.JPG">
-</p>
-<p>
   <img src="https://github.com/nnh242/Career-Bullet-Journal/blob/master/public/mobile2.JPG">
+</p>
+<p align="center">
   <img src="https://github.com/nnh242/Career-Bullet-Journal/blob/master/public/mobile3.JPG">
   <img src="https://github.com/nnh242/Career-Bullet-Journal/blob/master/public/mobile4.JPG">
 </p>
